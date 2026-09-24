@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-  ARTEFATO   M7-REV-2AAIM-U02-9ANO-OF15-6F4A-V04.62
+  ARTEFATO   M7-REV-2AAIM-U02-9ANO-OF15-6F4A-V04.66
   TIPO       ESTUDANTE
   NO         26.08.24=NAV.07-REV_AAIM_6-9ano_002_prov
   CHAT       frag. 359c8b75
@@ -1941,6 +1941,73 @@ body.m7f-disc #trilhabar .telacont:before{content:"📝 DISSERTATIVA · você mo
 .m7mcard .tx{display:flex;flex-direction:column;gap:3px}
 .m7mcard b{font-size:18px;color:#22303A}
 .m7mcard .d{font-size:16px;line-height:1.4;color:#546E7A}
+/* ===== CLD-221 · o aviso de registro alterado ===== */
+.m7fraude{position:fixed;inset:0;z-index:2147483645;background:rgba(120,0,0,.94);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  animation:m7pulsafr 1s ease-in-out 6}
+@keyframes m7pulsafr{0%,100%{background:rgba(120,0,0,.94)}50%{background:rgba(190,0,0,.96)}}
+.m7fraude .cx{max-width:660px;text-align:center;color:#fff}
+.m7fraude .em{font-size:88px;line-height:1}
+.m7fraude h2{font-size:38px;line-height:1.15;margin:10px 0 16px;color:#FFE066;
+  text-shadow:0 3px 0 rgba(0,0,0,.45);letter-spacing:.5px}
+.m7fraude .p1{font-size:22px;line-height:1.45;margin:0 0 14px}
+.m7fraude .p2{font-size:34px;font-weight:900;margin:0 0 14px;color:#FFE066}
+.m7fraude .p3{font-size:20px;margin:0 0 22px}
+.m7fraude .bt{font:800 18px inherit;padding:12px 22px;border-radius:12px;
+  border:3px solid #FFE066;background:transparent;color:#FFE066;cursor:pointer}
+.m7fraude.min{inset:auto 10px 96px auto;width:min(340px,82vw);background:#8E0000;
+  border:4px solid #FFE066;border-radius:14px;padding:12px;animation:none;display:block}
+.m7fraude.min .em{font-size:30px}
+.m7fraude.min h2{font-size:18px;margin:4px 0 6px}
+.m7fraude.min .p1,.m7fraude.min .p3,.m7fraude.min .bt{display:none}
+.m7fraude.min .p2{font-size:19px;margin:0}
+/* a linha do relatório final */
+.m7selo{margin:12px 0;padding:12px 16px;border-radius:12px;border:3px solid #2E7D32;
+  background:#E8F5E9;color:#1B5E20;font-weight:800;font-size:18px}
+.m7selo.no{border-color:#B3001B;background:#FDECEF;color:#8E0000}
+
+/* ===== CLD-219 · a resposta dissertativa montada com as frases DELE ===== */
+.m7minha{margin:14px 0;padding:14px 16px;border:3px solid #1565C0;border-radius:14px;background:#F2F8FF}
+.m7minha .tit{display:block;font-weight:900;font-size:19px;color:#0D4F7C;margin-bottom:8px}
+.m7minha .m7parte{margin:0;padding-left:0;list-style:none}
+.m7minha .m7parte li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;
+  margin:0 0 9px;padding:8px 10px;border-left:6px solid #1565C0;background:#fff;
+  border-radius:0 10px 10px 0;font-size:17px;line-height:1.45}
+.m7minha .pn{flex:0 0 auto;font-weight:900;color:#0D4F7C;font-size:15px;
+  text-transform:uppercase;letter-spacing:.4px}
+.m7minha .fmeu,.m7minha .fgab{flex:1 1 220px;min-width:0}
+.m7minha .fmeu{font-weight:700;color:#12303F}
+.m7minha .fgab{font-weight:700;color:#5B6B77;font-style:italic}
+.m7minha .mk{flex:0 0 100%;display:block;margin-top:4px;padding:2px 0;
+  color:#546E7A;font-size:14px;font-weight:800}
+.m7minha .mk::before{content:"↑ "}
+.m7minha .mk{border:0!important;background:transparent!important;box-shadow:none!important}
+.m7minha .junta{margin-top:10px;padding:12px 14px;border:3px solid #1565C0;border-radius:12px;background:#fff}
+.m7minha .junta p{margin:6px 0 0;font-size:18px;line-height:1.55}
+.m7minha .pq{margin-top:8px;font-size:15px;color:#546E7A;font-weight:700}
+
+/* CLD-217 · cada missão com a cor que o estudante já conhece do resto do arquivo */
+.m7mcard.m-tema{border-color:#3FA34D;background:#F2FAF3}
+.m7mcard.m-fase{border-color:#7E57C2;background:#F6F3FC}
+.m7mcard.m-tudo{border-color:#E07B2C;background:#FFF6EE}
+.m7mcard.m-tema.on{border-color:#14532D;background:#E4F5E8;border-width:5px}
+.m7mcard.m-tema.on b{color:#0A3A1C}
+.m7mcard.m-fase.on{border-color:#4527A0;background:#EDE7F6;border-width:5px}
+.m7mcard.m-fase.on b{color:#311B92}
+.m7mcard.m-tudo.on{border-color:#B75B10;background:#FFECD9;border-width:5px}
+.m7mcard.m-tudo.on b{color:#7A3A00}
+.m7mcard .jaesc{display:inline-block;align-self:flex-start;margin:2px 0 4px;padding:3px 12px;
+  border-radius:999px;font-weight:900;font-size:15px;color:#fff;background:#14532D}
+.m7mcard.m-fase .jaesc{background:#4527A0}
+.m7mcard.m-tudo .jaesc{background:#B75B10}
+/* a faixa que responde "e agora?" · CLD-217 */
+.m7mok{margin:16px 0 6px;padding:14px 18px;border:3px solid #14532D;border-radius:14px;
+  background:#E4F5E8;color:#0A3A1C;font-weight:900;font-size:20px;line-height:1.45}
+.m7mok .l2{display:block;font-weight:700;font-size:18px;margin-top:5px}
+.m7mfim{margin:10px 0 2px;padding:10px 14px;border:3px dashed #14532D;border-radius:12px;
+  background:#F2FAF3;color:#0A3A1C;font-weight:800;font-size:18px;text-align:center}
+@keyframes m7pisca{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+#rbProx.m7pisca{animation:m7pisca .55s ease-in-out 3;box-shadow:0 0 0 5px #A5D6A7}
 .m7mcard.on{border-color:#7B2D8E;background:#F6EEFA;border-width:5px}
 .m7mcard.on b{color:#5B1A6E}
 .m7mcard.apoio{border-color:#90CAF9;background:#F5FAFF}
@@ -3369,12 +3436,12 @@ try{ var _pb=document.getElementById("precisaBaixar"); if(_pb) _pb.style.display
 /* ==================== MODO ==================== */
 const MODO_TESTE = false;
 const UNIDADE = "revisão para a 2ª AAIM";
-const NO_PROV = "26.09.24_US01_GC01_PAD_C213_V0462_to_ESTUDANTE_9ano-3bim-2aaim-U_02-revisao-M7-OF15-6F4A.html";
+const NO_PROV = "26.09.24_US01_GC01_PAD_C221_V0466_to_ESTUDANTE_9ano-3bim-2aaim-U_02-revisao-M7-OF15-6F4A.html";
 const LINK_PROV = "https://claude.ai/chat/359c8b75-e4f4-42b6-a186-d0a41a8a9507";
 const EMOJI_INT=' <span style="color:#B83D3D">❓</span>';
 /* 0 = usa as 15. 10 = a tela entrega 10 por estudante, como a prova. */
 const QUESTOES_POR_ESTUDANTE = 0;
-const VERSAO = "V04.62";
+const VERSAO = "V04.66";
 /* ---- selo de conferência · dificulta adulterar o placar ---- */
 function hashTexto(s){
   let h=5381;
@@ -3721,6 +3788,7 @@ function apagarTodosOsAlunos(){
 }
 function salvarProgresso(){
   if(!estudante) return;
+  try{ resselar() }catch(e){}
   try{ gravarNoIndice() }catch(e){}
   /* o essencial primeiro: se algo mais falhar, isto ja esta salvo */
   try{
@@ -3737,7 +3805,9 @@ function salvarProgresso(){
       acum:tempoAcum+(tempoDesde?(Date.now()-tempoDesde):0),
       montagem:MONTAGEM, lidos:LIDOS, trilhas:TRILHAS_LIDAS, tents:TENT_POR_PERG,
       figs:FIGS_VISTAS, show:SHOW_FEITO, gastas:GASTAS,
-      nivel:(typeof NIVEL!=="undefined"?NIVEL:3), nivelCal:(typeof NIVEL_CALIBRADO!=="undefined"?NIVEL_CALIBRADO:false)
+      nivel:(typeof NIVEL!=="undefined"?NIVEL:3), nivelCal:(typeof NIVEL_CALIBRADO!=="undefined"?NIVEL_CALIBRADO:false),
+      minhadisc:(typeof MINHA_DISC!=="undefined"?MINHA_DISC:{}), caminho:(typeof CAMINHO!=="undefined"?CAMINHO:"direto"),
+      seqselo:(typeof SEQ_SELO!=="undefined"?SEQ_SELO:0), corrente:(typeof CORRENTE!=="undefined"?CORRENTE:"INICIO")
     }));
   }catch(e){}
 }
@@ -3759,6 +3829,8 @@ function retomar(){
   SHOW_FEITO=p.show||{};
   GASTAS=p.gastas||{};
   try{ if(typeof p.nivel==="number"){ NIVEL=p.nivel; NIVEL_CALIBRADO=!!p.nivelCal } }catch(e){}
+  try{ if(p.minhadisc) MINHA_DISC=p.minhadisc; if(p.caminho){ CAMINHO=p.caminho; CAMINHO_INICIADO=true } }catch(e){}
+  try{ if(typeof p.seqselo==="number") SEQ_SELO=p.seqselo; if(p.corrente) CORRENTE=p.corrente }catch(e){}
   AJ={trilha:null,pos:0,fim:false,lidas:[],perg:null};
   // o roteiro pode ter mudado de tamanho entre versões: em vez de jogar
   // no fim, leva para a primeira pergunta que ele ainda não respondeu
@@ -7735,9 +7807,20 @@ function elencoDaTela(){
   return {guarda:g,erro:g,acerto:g,caminho:c};
 }
 /* CLD-123 · card de chamar o professor nos placares (padrão FACA · Marcos 21/09 10:20) */
+/* CLD-221 · a linha do selo no placar, para o Marcos ver sem depender da cor da nota */
+function cardSelo(){
+  let ok=true; try{ ok=conferirCorrente() }catch(e){}
+  if(!Object.keys(registro).length) return "";
+  if(ok) return '<div class="m7selo">🔒 Registro conferido. As respostas deste computador estão íntegras.</div>';
+  /* a faixa e o alarme entram aqui: o placar é onde o Marcos e a turma estão olhando */
+  try{ faixaFraude(); alarmeFraude() }catch(e){}
+  return '<div class="m7selo no">🚨 REGISTRO ALTERADO · '+
+    (estudante||"—")+' · turma '+(turma||"—")+' · nº '+(chamadaNum||"—")+
+    '<br>As respostas guardadas não conferem. Esta nota não vale sem a sua conferência.</div>';
+}
 function cardProfessor(onde){
   const fim=(onde==="final");
-  return '<div class="m7prof"><b class="tit">✋ '+(fim?'Revisão concluída · mostre ao professor':'Placar da aula · mostre ao professor')+'</b><ul>'+
+  return cardSelo()+'<div class="m7prof"><b class="tit">✋ '+(fim?'Revisão concluída · mostre ao professor':'Placar da aula · mostre ao professor')+'</b><ul>'+
     '<li>Fique no seu lugar.</li>'+
     '<li>Levante a mão.</li>'+
     '<li>Espere ser chamado.</li>'+
@@ -8038,7 +8121,9 @@ function responder(i){
       h+='<div class="frase1">Clique em Próximo, na barra de baixo.</div>';
     }
   }
+  guardarParteDisc(r, sel, ok, certo);
   congelar(r);
+  try{ checarFraude() }catch(e){}   /* CLD-221 · também na tela em que a quebra aparecer */
   /* CLD-194 · o tema acabou de fechar: entra o retrospecto de Polya */
   if(r.fase6==="fecha" || (r.deg==="d6" && !r.rech)) { try{ h+=retrospecto(r.qi) }catch(e){} }
   document.getElementById("pos").innerHTML=h;
@@ -8337,7 +8422,7 @@ function reiniciarAula(){
   genero=generoDoNome(estudante); registro=p.registro||{}; RODADA=(p.rodada||1)+1;
   const capa=ultimaCapaAntes(p.iTela||0);
   const id=(capa>=0)?roteiro[capa].aula:null;
-  if(id) roteiro.forEach(function(x){ if(x.t==="perg"&&x.aula===id) delete registro[x.n] });
+  if(id) mudancaLegitima(function(){ roteiro.forEach(function(x){ if(x.t==="perg"&&x.aula===id) delete registro[x.n] }) });
   tentAtual=1; AJ={trilha:null,pos:0,fim:false,lidas:[]}; EXIG_CACHE={};
   iTela=(capa>=0)?capa:roteiro.findIndex(function(x){return x.t==="capa"});
   salvarProgresso(); render();
@@ -8488,6 +8573,180 @@ function cardGabDisc(aula){
     '<div class="pq">❓ '+(d.p||"")+'</div>'+
     '<div style="font-weight:800;margin-bottom:6px">A resposta montada nas 5 partes:</div>'+listaPartes(d)+'</div>';
 }
+/* ==================== CLD-219 · A RESPOSTA DA DISSERTATIVA PASSA A SER A DELE
+   (Marcos 24/09 10:04, escolheu a opção A do CLD-218_P.1)
+   Até aqui a tela final dizia "A resposta que você construiu" e mostrava um MODELO FIXO
+   do banco, igual para toda a turma. A promessa não era cumprida.
+   Agora cada uma das 5 partes guarda a frase que ELE marcou, e a tela mostra as duas
+   colunas: o texto dele e o modelo, lado a lado.
+
+   QUAL DAS 3 CERTAS ENTRA
+   As 3 certas da tela dizem a MESMA resposta em 3 redações (é a regra V2.2). Não existe
+   uma "mais certa" que as outras. Entre as que ele marcou, entra a MAIS COMPLETA — a mais
+   longa, que é a que costuma trazer o dado junto com a afirmação. Assim o parágrafo dele
+   fica legível e ele não paga nenhum clique a mais.
+   Se ele errou a parte, entra a certa do banco, e a linha fica marcada como tal. */
+/* ==================== CLD-221 · A CORRENTE ESTAVA ACUSANDO INOCENTE
+   (achado ao testar o pedido do Marcos de 24/09 10:26, antes de ligar o alarme)
+   O selo de cada resposta encadeia com o da anterior, mas a conferência recalcula em
+   ORDEM DE NÚMERO DE TELA. Quando a ordem em que as respostas foram gravadas é outra —
+   e é, sempre: na missão principal as fases são marcadas como puladas de uma vez, antes
+   dos temas — as duas contas dão resultados diferentes e a corrente quebra sozinha.
+   Medido num percurso honesto do 6º ano: conferirCorrente() devolvia false.
+   Se o alarme tivesse entrado assim, a turma inteira seria acusada.
+
+   Correção: os selos passam a ser recalculados SEMPRE na ordem de número de tela, a cada
+   gravação. A conferência usa a mesma ordem, então honesto dá certo e adulterado dá errado.
+   O que a trava pega continua o mesmo: mexer numa nota, apagar uma resposta, inventar outra. */
+let SEQ_SELO=0;
+function carimbar(n,tent,ts){
+  SEQ_SELO++;
+  CORRENTE=hashTexto(CORRENTE+"|"+n+":"+tent+":"+ts);
+  try{ if(registro[n]) registro[n].seq=SEQ_SELO }catch(e){}
+  return CORRENTE;
+}
+function conferirCorrente(){
+  try{
+    const ks=Object.keys(registro).map(Number);
+    if(!ks.length) return true;
+    /* progresso salvo por uma versão anterior não tem a ordem gravada: nesse caso a trava
+       se cala, porque acusar sem poder provar é pior do que não acusar. */
+    if(ks.some(function(k){ return !registro[k] || registro[k].seq==null })) return true;
+    ks.sort(function(a,b){ return registro[a].seq-registro[b].seq });
+    let h="INICIO", ok=true;
+    ks.forEach(function(k){
+      const r=registro[k];
+      if(!r||!r.selo||!r.ts){ ok=false; return }
+      h=hashTexto(h+"|"+k+":"+r.tent+":"+r.ts);
+      if(h!==r.selo) ok=false;
+    });
+    return ok;
+  }catch(e){ return true }
+}
+function resselar(){ /* CLD-221 · não existe mais: regravar os selos apagava a prova */ }
+
+/* CLD-221 · há mudanças LEGÍTIMAS que mexem na lista de respostas: trocar de missão devolve
+   fases que tinham sido puladas, refazer um tema apaga o que havia dele, reiniciar a aula
+   limpa a aula inteira. Apagar um registro do meio quebra a corrente sem ninguém ter
+   trapaceado — foi o que apareceu no teste da missão 2.
+   Aqui a corrente é refeita DEPOIS da mudança, e só se ela estava inteira ANTES. Quem já
+   tinha adulterado continua marcado: a reconstrução não serve de borracha. */
+function mudancaLegitima(fn){
+  let okAntes=true;
+  try{ okAntes=conferirCorrente() }catch(e){}
+  try{ fn() }catch(e){}
+  if(!okAntes) return;
+  try{
+    const ks=Object.keys(registro).map(Number)
+      .sort(function(a,b){ return (registro[a].seq||0)-(registro[b].seq||0) });
+    SEQ_SELO=0; CORRENTE="INICIO";
+    ks.forEach(function(k){ const r=registro[k]; if(r&&r.ts) r.selo=carimbar(k,r.tent,r.ts) });
+  }catch(e){}
+}
+
+/* ==================== CLD-221 · O ALARME DA FRAUDE (Marcos 24/09 10:26)
+   "isso precisa ficar bem destacado na tela, em fontes grandes, sobre a tela seja de placar
+    parcial, final, ou na tela que quebrou. Assim o estudante já se assusta e para com isso.
+    Aproveite e toque um som de alarme por 5 segundos, para o estudante de onde ele estiver
+    já avisar o professor e os demais da turma."
+   O texto é firme, mas fala do REGISTRO, não do caráter de ninguém: a trava pega a
+   alteração, não a intenção. Se um dia der defeito, quem for exposto não terá sido chamado
+   de ladrão. O som é gerado pelo próprio arquivo, sem internet e sem arquivo externo. */
+let ALARME_TOCADO=false;
+function alarmeFraude(){
+  if(ALARME_TOCADO) return;
+  ALARME_TOCADO=true;
+  try{
+    const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return;
+    const ctx=new AC();
+    const g=ctx.createGain(); g.connect(ctx.destination); g.gain.value=0.16;
+    const o=ctx.createOscillator(); o.type="square"; o.connect(g);
+    const t0=ctx.currentTime;
+    for(let i=0;i<10;i++){                       /* sirene: sobe e desce 10 vezes em 5 s */
+      o.frequency.setValueAtTime(760, t0+i*0.5);
+      o.frequency.linearRampToValueAtTime(440, t0+i*0.5+0.25);
+      o.frequency.linearRampToValueAtTime(760, t0+i*0.5+0.5);
+    }
+    g.gain.setValueAtTime(0.16, t0+4.6);
+    g.gain.linearRampToValueAtTime(0.0001, t0+5);
+    o.start(t0); o.stop(t0+5.05);
+    o.onended=function(){ try{ ctx.close() }catch(e){} };
+  }catch(e){}
+}
+function encolherFraude(){
+  const e=document.getElementById("m7fraude"); if(e) e.classList.add("min");
+}
+function faixaFraude(){
+  try{
+    if(document.getElementById("m7fraude")) return;
+    const d=document.createElement("div");
+    d.id="m7fraude"; d.className="m7fraude";
+    d.innerHTML='<div class="cx"><div class="em">🚨</div>'+
+      '<h2>O REGISTRO DESTA ATIVIDADE FOI ALTERADO</h2>'+
+      '<p class="p1">As respostas guardadas neste computador não conferem com o que foi respondido.</p>'+
+      '<p class="p2">CHAME O PROFESSOR AGORA.</p>'+
+      '<p class="p3">A nota desta rodada não vale enquanto ele não conferir.</p>'+
+      '<button type="button" class="bt" onclick="encolherFraude()">entendi · deixar o aviso pequeno</button>'+
+      '</div>';
+    document.body.appendChild(d);
+  }catch(e){}
+}
+function checarFraude(){
+  try{
+    if(typeof estudante==="undefined" || !estudante) return;
+    if(!Object.keys(registro).length) return;
+    if(conferirCorrente()) return;
+    faixaFraude(); alarmeFraude();
+  }catch(e){}
+}
+let MINHA_DISC={};
+function guardarParteDisc(r, sel, ok, certo){
+  try{
+    if(!r || !r.discf) return;
+    const q=BANCO[r.qi], dg=q[r.deg]||{};
+    const ch=q.of+"_"+r.deg;
+    if(MINHA_DISC[ch]) return;
+    let esc=[];
+    (sel||[]).forEach(function(k){ if(ok(k)) esc.push(parAtual.alts[k]) });
+    if(certo && esc.length){
+      esc.sort(function(a,b){ return String(b).length-String(a).length });
+      MINHA_DISC[ch]={t:esc[0], meu:true, outras:esc.slice(1)};
+    } else {
+      const c=(dg.ok||[])[0]||"";
+      if(c) MINHA_DISC[ch]={t:c, meu:false, outras:[]};
+    }
+    salvarProgresso();
+  }catch(e){}
+}
+function meuParagrafoDisc(qi){
+  const q=BANCO[qi]; if(!q) return null;
+  const partes=roteiro.filter(function(x){ return x.discf && x.qi===qi });
+  const linhas=partes.map(function(x){
+    const m=MINHA_DISC[q.of+"_"+x.deg];
+    return m ? m : null;
+  });
+  if(!linhas.some(function(x){ return x })) return null;
+  return linhas;
+}
+function cardMinhaDisc(qi){
+  const linhas=meuParagrafoDisc(qi);
+  if(!linhas) return "";
+  const texto=linhas.map(function(m){ return m?m.t:"…" }).join(" ");
+  const nMeu=linhas.filter(function(m){ return m&&m.meu }).length;
+  let lis="";
+  linhas.forEach(function(m,k){
+    lis+='<li><span class="pn">'+(PARTES_DISC[k]||("parte "+(k+1)))+'</span>'+
+         (m?('<span class="'+(m.meu?"fmeu":"fgab")+'">'+m.t+'</span>'+
+             (m.meu?"":'<span class="mk">entrou pelo gabarito</span>')):'…')+'</li>';
+  });
+  return '<div class="m7minha"><span class="tit">✍️ A SUA resposta, montada com o que você marcou</span>'+
+    '<ul class="m7parte">'+lis+'</ul>'+
+    '<div class="junta"><b>Juntando as 5 frases, a sua resposta ficou assim:</b>'+
+    '<p>'+texto+'</p></div>'+
+    '<div class="pq">Você escolheu '+nMeu+' das 5 frases. '+
+    (nMeu===5?'Todas são suas.':'As outras entraram pelo gabarito, para o texto não ficar com buraco.')+
+    '</div></div>';
+}
 function telaDisc(r){
   const q=BANCO[r.qi], d=q.d6||{};
   const partes=roteiro.filter(function(x){return x.discf&&x.qi===r.qi});
@@ -8501,8 +8760,9 @@ function telaDisc(r){
     (q.codigo||"")+'</div>'+
     '<div class="croxo"><div class="cp-cmd">📝 Fase 6 · a questão dissertativa</div>'+
     '<h3>'+d.p+'</h3><div class="conector">Você responde escrevendo, com as suas palavras.</div></div>'+
-    '<div class="m7gab"><span class="tit">📝 A resposta que você construiu</span>'+listaPartes(d)+
-    '<div style="margin-top:8px;font-weight:800">Juntas, as 5 frases formam a resposta.</div></div>'+
+    cardMinhaDisc(r.qi)+
+    '<div class="m7gab"><span class="tit">📘 O modelo · como a resposta pode ser escrita</span>'+listaPartes(d)+
+    '<div style="margin-top:8px;font-weight:800">Compare com a sua. Se disserem a mesma coisa, você acertou.</div></div>'+
     '<div class="m7resp"><b>O que a pergunta pede:</b> '+(d.esperada||"")+'</div>'+
     '<div class="m7conf"><span class="tit">🔎 Confira com calma</span>'+
       '<label><input type="checkbox"> Li a pergunta de novo.</label>'+
@@ -8570,7 +8830,7 @@ function temasErrados(){
   return out;
 }
 function inicioTema(qi){ return roteiro.findIndex(function(x){return x.qi===qi&&(x.t==="perg"||x.t==="disc")}) }
-function limparTema(qi){ roteiro.forEach(function(x){ if(x.qi===qi&&(x.t==="perg"||x.t==="disc")){ delete registro[x.n]; delete TENT_POR_PERG[x.n]; delete GASTAS[x.n] } }) }
+function limparTema(qi){ mudancaLegitima(function(){ roteiro.forEach(function(x){ if(x.qi===qi&&(x.t==="perg"||x.t==="disc")){ delete registro[x.n]; delete TENT_POR_PERG[x.n]; delete GASTAS[x.n] } }) }) }
 function refazerTema(qi){
   if(!todasFeitas()){ alert("Refazer só depois de terminar todos os temas."); return }
   const errs=temasErrados();
@@ -8989,7 +9249,7 @@ function refazerAula(idAula){
     "Clique aqui para apagar as respostas desta aula e refazer",
     function(){
       RODADA++;
-      its.forEach(function(x){ delete registro[x.n] });
+      mudancaLegitima(function(){ its.forEach(function(x){ delete registro[x.n] }) });
       MONTAGEM={}; AJ={trilha:null,pos:0,fim:false,lidas:[]};
       tentAtual=1;
       iTela=roteiro.findIndex(function(x){return x.t==="capa"&&x.aula===idAula});
@@ -9376,9 +9636,11 @@ function ajustarFases(qi, acertou){
   if(depois.length<=abertas.length){ delete EXTRA_FASES[qi]; return }
   /* as fases que entram estavam marcadas como puladas · voltam ao caminho, e em NAV.00 */
   NIVEL_FASE_NOVA[qi]=true;
-  roteiro.forEach(function(x){
-    if(x.t==="perg" && x.qi===qi && x.rech && depois.indexOf(x.deg)>=0 &&
-       registro[x.n] && registro[x.n].pulado){ delete registro[x.n] }
+  mudancaLegitima(function(){
+    roteiro.forEach(function(x){
+      if(x.t==="perg" && x.qi===qi && x.rech && depois.indexOf(x.deg)>=0 &&
+         registro[x.n] && registro[x.n].pulado){ delete registro[x.n] }
+    });
   });
   try{ salvarProgresso() }catch(e){}
 }
@@ -9419,7 +9681,16 @@ function ajustarNivel(acertou){
 }
 let ACERTOS_SEGUIDOS=0;
 /* no apoio, uma tentativa só nas fases */
-function MAXT(){ const r=roteiro[iTela]; if(r&&r.rech&&NIVEL<=1) return 1; return MAXT_BASE() }
+/* CLD-218 · Marcos 09:55: "a proposta por temas é apenas 1 tentativa, ele errando ou não
+   você mostra a resposta e ele só avança (isso é o que eu espero, como era antigamente)".
+   Na MISSÃO PRINCIPAL isso passa a valer também para as 5 partes da dissertativa: uma
+   tentativa, a certa aparece, e ele segue. Nas outras missões continuam duas. */
+function MAXT(){
+  const r=roteiro[iTela];
+  if(r && r.discf && CAMINHO==="direto") return 1;
+  if(r&&r.rech&&NIVEL<=1) return 1;
+  return MAXT_BASE();
+}
 /* no apoio a ajuda vem aberta, antes de responder */
 function ajudaAntes(r){
   if(NIVEL>1 || !r || !r.rech || registro[r.n]) return "";
@@ -10089,29 +10360,38 @@ function pintarCena(r){
    No direto ele vê os 15 temas e chega ao gabarito da dissertativa dentro de uma aula.
    A nota sai igual: quem acerta o tema de primeira já ganhava o crédito cheio. */
 let CAMINHO="direto";   /* CLD-207 · abre na missão principal */
+function piscarProximo(){
+  try{ const b=document.getElementById("rbProx"); if(!b) return;
+       b.classList.remove("m7pisca"); void b.offsetWidth; b.classList.add("m7pisca");
+       setTimeout(function(){ b.classList.remove("m7pisca") }, 2600);
+  }catch(e){}
+}
 function trocarCaminho(c){
   /* CLD-208 · três caminhos: direto (só temas) · completo (abre ao errar) · fases (tudo) */
   CAMINHO=(c==="direto"||c==="fases")?c:"completo";
-  if(CAMINHO!=="direto"){
-    /* voltar de "direto" para os outros: as fases que foram marcadas como puladas sem o
-       estudante ter respondido nada voltam a valer. Sem isto, quem trocava de missão
-       ficava com o caminho antigo pela frente. */
-    roteiro.forEach(function(x){
-      if(x.t==="perg" && x.rech && registro[x.n] && registro[x.n].pulado && registro[x.n].tent===0)
-        delete registro[x.n];
-    });
-  }
-  if(CAMINHO==="direto"){
-    /* marca como pulada toda fase ainda não respondida · as telas continuam no sumário */
-    const ts=Date.now();
-    roteiro.forEach(function(x){
-      if(x.t==="perg" && x.rech && !x.discf && !registro[x.n]){   /* CLD-207 · a dissertativa fica */
-        registro[x.n]={tent:0,pulado:true,ts:ts}; registro[x.n].selo=carimbar(x.n,0,ts);
-      }
-    });
-  }
+  /* CLD-221 · trocar de missão mexe na lista de respostas; a corrente é refeita depois */
+  mudancaLegitima(function(){
+    if(CAMINHO!=="direto"){
+      /* voltar de "direto" para os outros: as fases que foram marcadas como puladas sem o
+         estudante ter respondido nada voltam a valer. Sem isto, quem trocava de missão
+         ficava com o caminho antigo pela frente. */
+      roteiro.forEach(function(x){
+        if(x.t==="perg" && x.rech && registro[x.n] && registro[x.n].pulado && registro[x.n].tent===0)
+          delete registro[x.n];
+      });
+    }
+    if(CAMINHO==="direto"){
+      /* marca como pulada toda fase ainda não respondida · as telas continuam no sumário */
+      const ts=Date.now();
+      roteiro.forEach(function(x){
+        if(x.t==="perg" && x.rech && !x.discf && !registro[x.n]){   /* CLD-207 · a dissertativa fica */
+          registro[x.n]={tent:0,pulado:true,ts:ts}; registro[x.n].selo=carimbar(x.n,0,ts);
+        }
+      });
+    }
+  });
   try{ salvarProgresso() }catch(e){}
-  fecharCaminho(); render();
+  fecharCaminho(); render(); piscarProximo(); try{ checarFraude() }catch(e){}
 }
 function fecharCaminho(){ const e=document.getElementById("m7camjan"); if(e) e.remove() }
 /* ==================== CLD-207 · A TELA DE MISSÕES (Marcos 24/09 06:03 e 06:29)
@@ -10157,11 +10437,14 @@ function oferecerMissoes(){ /* CLD-208 · não abre mais sozinha: virou tela do 
    não aparece no sumário. Agora é uma TELA do roteiro, logo depois do combinado, com
    número, título e lugar na lista — o estudante escolhe antes de começar e volta quando
    quiser pelo botão 🧭 do topo. */
-function cardMissao(id, on, emo, tit, linhas, fechado){
+/* CLD-217 · cada missão usa a cor que o estudante já conhece do resto do arquivo:
+   verde do TEMA na principal, roxo das FASES nas duas de desmontar, cinza na fechada. */
+function cardMissao(id, on, emo, tit, linhas, fechado, cor){
   let h=fechado
     ? '<div class="m7mcard fech">'
-    : '<button type="button" class="m7mcard'+(on?" on":"")+'" onclick="trocarCaminho(\''+id+'\')">';
-  h+='<span class="e">'+emo+'</span><span class="tx"><b>'+tit+(on?' · escolhida':'')+'</b>'+
+    : '<button type="button" class="m7mcard'+(cor?" "+cor:"")+(on?" on":"")+'" onclick="trocarCaminho(\''+id+'\')">';
+  h+='<span class="e">'+emo+'</span><span class="tx"><b>'+tit+'</b>'+
+     (on?'<span class="jaesc">✔ esta é a sua missão</span>':'')+
      linhas.map(function(l){ return '<span class="d">'+l+'</span>' }).join("")+'</span>';
   return h+(fechado?'</div>':'</button>');
 }
@@ -10171,15 +10454,15 @@ function blocosMissao(){
   return cardMissao("direto", CAMINHO==="direto", "🎯", "MISSÃO PRINCIPAL · os "+temas+" temas",
       ["Do jeito que caem na prova. Sem fases no meio.",
        "Dá para terminar numa aula.",
-       "É esta que vale a prova. Comece por ela."])+
+       "É esta que vale a prova. Comece por ela."], false, "m-tema")+
     cardMissao("completo", CAMINHO==="completo", "🥪", "MISSÃO 2 · desmontar quando errar",
       ["Acertou o tema? Segue para o próximo.",
        "Errou? O tema se abre em fases até você entender.",
-       "Demora mais. Faça depois dos temas."])+
+       "Demora mais. Faça depois dos temas."], false, "m-fase")+
     cardMissao("fases", CAMINHO==="fases", "🧩", "MISSÃO 3 · todas as fases",
       ["Os "+temas+" temas e as "+fases+" fases, uma por uma.",
        "As fases abrem mesmo quando você acerta o tema.",
-       "É a mais longa. Para quem quer entender tudo."])+
+       "É a mais longa. Para quem quer entender tudo."], false, "m-tudo")+
     cardMissao("", false, "⚽", "MISSÃO 4 · justificar cada alternativa",
       ["Dizer por que cada frase é gol, trave, fora ou gol contra.",
        "🔒 Ainda em construção. Entra numa próxima versão."], true)+
@@ -10201,16 +10484,23 @@ function telaMissao(){
     'Faça ela primeiro: assim você vê todas antes de ir para a Alura.</p>'+
     '<p><b>As outras são para depois.</b> Se sobrar tempo, volte aqui pelo botão 🧭 no alto da tela '+
     'e escolha outra. Você não perde nada do que já fez.</p>'+
+    /* CLD-217 · a resposta para "e agora?" vem ANTES dos cards, não depois de cinco deles */
+    '<div class="m7mok">✔ A missão principal já está escolhida para você.'+
+    '<span class="l2">Para começar por ela, clique em <b>Próximo →</b>, na barra de baixo.</span>'+
+    '<span class="l2">Se quiser outra, toque num dos cards abaixo antes.</span></div>'+
     '<div class="m7mlista">'+blocosMissao()+'</div>'+
-    '<div style="font-size:16px;color:var(--cinza);margin-top:12px;text-align:center">'+
-    'Clique em Próximo, na barra de baixo, para começar.</div></div>';
+    /* CLD-217 · Marcos 09:46: "e aí faço o quê, vou para avançar?" — a instrução estava
+       no fim, abaixo de cinco cards, fora da vista. Agora ela é uma faixa verde grande,
+       logo depois dos cards, e o botão Próximo pisca três vezes ao escolher. */
+    '<div class="m7mfim">Escolheu? Clique em <b>Próximo →</b>, na barra de baixo.</div>'+
+    '</div>';
 }
 function apoioLigado(){ return NIVEL<=0 && NIVEL_TRAVADO }
 function entrarApoio(){
   if(apoioLigado()){ NIVEL_TRAVADO=false; NIVEL=1; }
   else { NIVEL=0; NIVEL_CALIBRADO=true; NIVEL_TRAVADO=true; NIVEL_CHAVE={}; NIVEL_TIPO={}; }
   try{ APOIO_ESCOLHIDO=apoioLigado(); salvarProgresso() }catch(e){}
-  fecharCaminho(); render();
+  fecharCaminho(); render(); piscarProximo(); try{ checarFraude() }catch(e){}
 }
 let APOIO_ESCOLHIDO=false;
 function abrirCaminho(){
@@ -10351,7 +10641,7 @@ setInterval(function(){
 if(MODO_TESTE){ window.__auditoria=function(codigo){ return eval(codigo) } }
 ["pedirTelaCheia","voltarTelaCheia","ignorarTelaCheia","abrirLista","pular","escolherTurma",
  "checarAcordo","painel","abrirG","fecharModal","responder","render","avancar","voltarTela",
- "proxFatia","refazerTudo","refazerAula","retomar","comecarDoZero","voltarOnde","abrirRetomada","reiniciarAula","reiniciarTudo","proximaAulaDepois","irAoPlacar","escolherAula","irParaAula","pintarRodape","trocarAba","fecharG","abrirMetodo","abrirGlosCompleto","pintarTrava","zerarLeituras","abrirTrilha","fimTrilha","voltarParte","nomeDigitado","atualizarChamada","escolherGenero","ampliarFig","selecionar","confirmarDuas","tentarDeNovo","reverFase","jogarCoringa","alternarTrilha","refazerTema","escolherPos","abrirRegras","sairJogo","escolherCfg","abrirFim","abrirNivel","porNivel","fecharNivel","abrirBit","abrirCaminho","trocarCaminho","fecharCaminho","abrirGlosQuestao","calcularChave","entrarApoio"].forEach(function(n){
+ "proxFatia","refazerTudo","refazerAula","retomar","comecarDoZero","voltarOnde","abrirRetomada","reiniciarAula","reiniciarTudo","proximaAulaDepois","irAoPlacar","escolherAula","irParaAula","pintarRodape","trocarAba","fecharG","abrirMetodo","abrirGlosCompleto","pintarTrava","zerarLeituras","abrirTrilha","fimTrilha","voltarParte","nomeDigitado","atualizarChamada","escolherGenero","ampliarFig","selecionar","confirmarDuas","tentarDeNovo","reverFase","jogarCoringa","alternarTrilha","refazerTema","escolherPos","abrirRegras","sairJogo","escolherCfg","abrirFim","abrirNivel","porNivel","fecharNivel","abrirBit","abrirCaminho","trocarCaminho","fecharCaminho","abrirGlosQuestao","calcularChave","entrarApoio","encolherFraude"].forEach(function(n){
   try{ window[n]=eval(n) }catch(e){}
 });
 })();
