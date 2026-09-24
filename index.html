@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ============================================================
-  ARTEFATO   M7-REV-2AAIM-U02-9ANO-OF15-6F4A-V04.52
+  ARTEFATO   M7-REV-2AAIM-U02-9ANO-OF15-6F4A-V04.58
   TIPO       ESTUDANTE
   NO         26.08.24=NAV.07-REV_AAIM_6-9ano_002_prov
   CHAT       frag. 359c8b75
@@ -1682,7 +1682,61 @@ body.m7f-disc #trilhabar .telacont:before{content:"📝 DISSERTATIVA · você mo
 .m7regras .sub{font-size:16px;font-weight:900;color:#455A64;margin:8px 0 2px;letter-spacing:1px}
 .m7regras ul{margin:0 0 4px 18px;padding:0}
 .m7regras li{font-size:17px;line-height:1.5;margin:4px 0}
+/* CLD-200 · as pastilhas QDA · QPA · QBA · nº de fases cabem numa linha só */
+.qref{gap:5px !important;row-gap:5px}
+.qref .qtag{font-size:14px !important;padding:3px 9px !important;letter-spacing:.4px !important;white-space:nowrap}
+.qref .qleg{font-size:14px !important}
+/* CLD-201 · os três botões da faixa: borda escura (a branca sumia no fundo claro),
+   e a faixa inteira numa linha só, com rolagem lateral se não couber. */
+.gg-i.gg-fora{opacity:.62}
+/* CLD-202 · a célula de Python precisa ser legível: ocupa a largura toda e chama o toque */
+.figm7 img{width:100%;max-width:100%;height:auto;cursor:zoom-in}
+.figm7{cursor:zoom-in}
+.gg-i.gg-fora::after{content:attr(data-onde);color:#546E7A;font-size:13px;font-weight:700;display:block}
+.showabrir{display:flex;align-items:center;gap:10px;border:3px solid #00695C;background:#E0F2F1;
+  border-radius:12px;padding:10px 13px;margin:8px 0 0;cursor:pointer;font-size:17px;font-weight:900;color:#004D40}
+.showabrir input{width:22px;height:22px;cursor:pointer}
+.m7bts{display:flex;flex-wrap:nowrap;gap:8px;justify-content:center;align-items:center;
+  overflow-x:auto;padding:4px 8px 6px;scrollbar-width:none}
+.m7bts::-webkit-scrollbar{display:none}
+.m7nivbt{flex:0 0 auto;border-color:#37474F !important;color:#263238 !important;
+  background:rgba(255,255,255,.96) !important;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+/* as pastilhas de referência numa linha só, com rolagem se faltar espaço */
+.qref{flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none}
+.qref::-webkit-scrollbar{display:none}
 .em20{font-size:20px;line-height:1;vertical-align:-2px;display:inline-block}
+/* CLD-199 · o cenário do NAV na margem lilás · fica ATRÁS de tudo e não recebe clique */
+.m7cena{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.m7cl{position:absolute;top:0;bottom:0;width:min(190px,14vw)}
+.m7cl.esq{left:0} .m7cl.dir{right:0}
+.m7ce{position:absolute;bottom:-14vh;left:var(--x);font-size:34px;line-height:1;opacity:.5;
+  animation:m7sobe var(--d) linear var(--a) infinite;will-change:transform}
+@keyframes m7sobe{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  8%{opacity:.5}
+  92%{opacity:.5}
+  100%{transform:translateY(-124vh) rotate(18deg);opacity:0}
+}
+/* o quadro branco e a barra ficam por cima do cenário */
+/* CLD-200 · esta regra existia para o conteúdo ficar acima do cenário, mas o
+   position:relative sobrescrevia o position:fixed do #rodape (que passou a rolar junto)
+   e o do .modal (que passou a aparecer no fim da página, embaixo de tudo, em vez de
+   sobrepor). Quem já tem position próprio no motor só precisa do z-index. */
+.card,.cardlat{position:relative;z-index:2}
+#trilhabar{z-index:60}
+#rodape,.barra{z-index:80}
+.modal{z-index:120}
+/* em tela estreita o cenário atrapalharia a leitura: some */
+@media (max-width:820px){ .m7cena{display:none} }
+@media (prefers-reduced-motion:reduce){ .m7ce{animation:none;opacity:.30} }
+.m7chave{border:3px solid #6A1B9A;background:#F3E5F5;border-radius:14px;padding:12px 14px;margin:12px 0}
+.m7chave .t{font-size:18px;font-weight:900;color:#4A148C;margin-bottom:6px}
+.m7chave .l{font-size:16px;line-height:1.5;color:#37474F;margin:4px 0}
+.m7chave .l.pq{font-size:14px;color:#6A1B9A;margin-top:8px;border-top:2px dashed #CE93D8;padding-top:7px}
+.m7chave .lin{display:flex;align-items:center;gap:12px;margin:9px 0}
+.m7chave input{font-size:26px;font-weight:900;font-family:inherit;width:120px;text-align:center;
+  border:3px solid #6A1B9A;border-radius:12px;padding:7px;letter-spacing:5px}
+.m7chave .out{font-size:26px;font-weight:900;color:#4A148C;letter-spacing:1px}
 .m7retro{border:3px solid #37474F;background:#ECEFF1;border-radius:14px;padding:12px 14px;margin:12px 0}
 .m7retro .t{font-size:18px;font-weight:900;color:#263238;margin-bottom:6px}
 .m7retro .l{font-size:17px;line-height:1.5;margin:5px 0;color:#37474F}
@@ -1707,7 +1761,7 @@ body.m7f-disc #trilhabar .telacont:before{content:"📝 DISSERTATIVA · você mo
 .m7nivsum .d{font-size:15px;color:#607D8B;line-height:1.45;margin:2px 0}
 .m7nivsum .b{margin-top:8px;font-size:16px;font-weight:900;font-family:inherit;border:3px solid #F9A825;
   background:#fff;color:#E65100;border-radius:12px;padding:8px 16px;cursor:pointer}
-.m7nivbt{display:block;margin:6px auto 2px;font-size:15px;font-weight:900;font-family:inherit;
+.m7nivbt{display:inline-flex;align-items:center;margin:6px 5px 2px;font-size:15px;font-weight:900;font-family:inherit;
   border:3px solid rgba(255,255,255,.85);background:rgba(255,255,255,.92);color:#37474F;
   border-radius:20px;padding:5px 14px;cursor:pointer;position:relative;z-index:3}
 .m7nivjan{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.55);display:flex;
@@ -1866,6 +1920,53 @@ body.m7f-disc #trilhabar .telacont:before{content:"📝 DISSERTATIVA · você mo
 
 .figleg{font-size:14px;font-weight:700;color:#546E7A;margin-top:4px}
 .m7teste{margin:0 0 10px;padding:8px 12px;border:3px dashed #6A1B9A;border-radius:10px;background:#F3E5F5;font-size:15px;font-weight:800;color:#4A148C}
+
+/* ===== CLD-207 · o BIT colado na alternativa errada que ele marcou ===== */
+.m7bitalt{display:flex;gap:10px;align-items:flex-start;margin:-4px 0 12px 0;padding:10px 14px;
+  border:3px solid #2E9BE0;border-left-width:8px;border-radius:0 12px 12px 0;background:#F0F8FF}
+.m7bitalt.bia{border-color:#C2185B;background:#FFF5F8}
+.m7bitalt .be{font-size:26px;line-height:1.1;flex:0 0 auto}
+.m7bitalt .tx{display:flex;flex-direction:column;gap:3px}
+.m7bitalt b{font-size:16px;color:#0D4F7C}
+.m7bitalt.bia b{color:#AD1457}
+.m7bitalt .l{font-size:17px;line-height:1.45;color:#22303A}
+
+/* ===== CLD-207 · a tela de missões ===== */
+.m7nivjan .op.mprin{border-color:#7B2D8E;background:#F6EEFA}
+.m7nivjan .op.mprin b{color:#5B1A6E;font-size:19px}
+.m7nivjan .op.apoio{border-color:#1565C0;background:#EEF6FF}
+.m7nivjan .op.fech{opacity:.62;cursor:default;border-style:dashed}
+.m7nivjan .op.fech b{color:#546E7A}
+
+/* ===== CLD-203 · o card da alternativa escolhida muda de cor (Marcos 23/09 21:28) =====
+   "pode mostrar o ticado com verde também e mudar a cor do card da alternativa para verde" */
+#alts .alt.m7acertou{background:#E8F5E9!important;border-color:#2E7D32!important}
+#alts .alt.m7acertou .altletra{background:#2E7D32!important;color:#fff!important;border-color:#1B5E20!important}
+#alts .alt.m7acertou.sel{outline-color:#2E7D32!important;background:#E8F5E9!important}
+#alts .alt.m7acertou.sel .altletra::after{background:#2E7D32}
+#alts .alt.m7errou{background:#FDECEF!important;border-color:#C62828!important}
+#alts .alt.m7errou.sel{outline-color:#C62828!important;background:#FDECEF!important}
+#alts .alt.m7errou.sel .altletra::after{content:"✘";background:#C62828}
+#alts .alt.m7errou .altletra{background:#C62828!important;color:#fff!important;border-color:#8E1B1B!important}
+
+/* ===== CLD-203 · os números da trilha do BIT não podem ficar em cima da borda ===== */
+.m7bitcorpo ol{margin:4px 0;padding-left:26px}
+.m7bitcorpo ol li{margin:0 0 4px;padding-left:2px}
+.m7contra .m7bit{margin-top:6px}
+.m7contra .m7bitcorpo{margin-bottom:6px}
+
+/* ===== CLD-203 · a palavra do Python dentro da pastilha composta =====
+   «laço for» · só o FOR ganha cara de código. Assim o estudante vê que são duas coisas. */
+.tchip .m7kwin{font-family:Consolas,'Courier New',monospace;font-style:normal;font-weight:800;
+  background:#1E2B33;color:#FF7B72;border-radius:5px;padding:0 5px;margin:0 1px;letter-spacing:.3px}
+.m7py .m7kwin,.m7bl .m7kwin{background:transparent;color:inherit;padding:0}
+
+/* ===== CLD-203 · a barra do topo fica fixa TAMBÉM no modo normal (Marcos 23/09 21:28) =====
+   sticky só cola quando NENHUM ancestral tem overflow diferente de visible. O quadro branco
+   ganhou overflow no CLD-199 (o cenário lilás não podia vazar) e a barra descolou junto. */
+html,body{overflow-x:clip}
+#trilhabar{position:sticky!important;top:0!important;z-index:60}
+#palco,#quadro,.folha,main,#conteudo{overflow:visible!important}
 </style>
 </head>
 <body>
@@ -3193,12 +3294,12 @@ body.m7f-disc #trilhabar .telacont:before{content:"📝 DISSERTATIVA · você mo
 /* ==================== MODO ==================== */
 const MODO_TESTE = false;
 const UNIDADE = "revisão para a 2ª AAIM";
-const NO_PROV = "26.09.23_US01_GC01_PAD_C198_V0452_to_ESTUDANTE_9ano-3bim-2aaim-U_02-revisao-M7-OF15-6F4A.html";
+const NO_PROV = "26.09.24_US01_GC01_PAD_C207_V0458_to_ESTUDANTE_9ano-3bim-2aaim-U_02-revisao-M7-OF15-6F4A.html";
 const LINK_PROV = "https://claude.ai/chat/359c8b75-e4f4-42b6-a186-d0a41a8a9507";
 const EMOJI_INT=' <span style="color:#B83D3D">❓</span>';
 /* 0 = usa as 15. 10 = a tela entrega 10 por estudante, como a prova. */
 const QUESTOES_POR_ESTUDANTE = 0;
-const VERSAO = "V04.52";
+const VERSAO = "V04.58";
 /* ---- selo de conferência · dificulta adulterar o placar ---- */
 function hashTexto(s){
   let h=5381;
@@ -3450,15 +3551,15 @@ function seloFase(deg){
 }
 const DEGRAUS={
   d1:{cod:"D01",nome:"LOCALIZAR",  cor:"#2E5C8A",fig:"circ",hex:"#2E5C8A",
-      dica:"A resposta está escrita no enunciado. Releia com calma."},
+      dica:"Procure o LUGAR. A resposta está escrita no enunciado."},
   d2:{cod:"D02",nome:"IDENTIFICAR",cor:"#4A8C3F",fig:"circ",hex:"#4A8C3F",
-      dica:"Aqui a pergunta é sobre o NOME do elemento, não sobre o que ele faz."},
+      dica:"Procure a IDENTIDADE: o que aquilo é, ou o que ele faz."},
   d3:{cod:"D03",nome:"USAR",   cor:"var(--d3)",fig:"circ",hex:"#F0C419",
-      dica:"A resposta está no que acontece neste caso, não no nome do comando."},
+      dica:"Procure o MODO: o passo e a ordem em que a coisa acontece."},
   d4:{cod:"D04",nome:"TESTAR", cor:"var(--d4)",fig:"quad",hex:"#E07B2C",
-      dica:"Pense no que muda ou no que quebra quando a versão do código é trocada."},
+      dica:"Procure o CASO: o que muda quando isso acontece."},
   d5:{cod:"D05",nome:"JUSTIFICAR",cor:"var(--d5)",fig:"los",hex:"#D32F2F",
-      dica:"O porquê está no texto. Procure a frase que explica a razão."},
+      dica:"Procure o MOTIVO. O porquê está no texto, na frase que explica a razão."},
   d6:{cod:"D06",nome:"QBA",cor:"#9C27B0",fig:"los",hex:"#9C27B0",
       dica:"Leia todas as alternativas antes de marcar."}
 };
@@ -4276,6 +4377,7 @@ function n2(x){return x.toFixed(2).replace(".",",")}
 /* ==================== RENDER ==================== */
 function render(){
   try{ resgatarJogos() }catch(e){}
+  try{ aplicarCaminhoInicial(); oferecerMissoes() }catch(e){}
   /* grava a cada tela · antes so gravava ao responder, e quem tinha
      apenas lido pastilha nunca aparecia na lista de retomada */
   try{ if(typeof estudante!=="undefined" && estudante) salvarProgresso() }catch(e){}
@@ -4302,6 +4404,7 @@ function render(){
   else if(r.t==="coringa") telaCoringa();
   else if(r.t==="final") telaFinal();
   atualizarStatus();desenharTrilha();pintarRodape();salvarProgresso();
+  try{ pintarCena(roteiro[iTela]) }catch(e){}
   try{ aumentarEmojis() }catch(e){}
   try{ if(typeof window!=="undefined"&&window.scrollTo) window.scrollTo(0,0) }catch(e){}
 }
@@ -5991,8 +6094,9 @@ function montarShow(q,r,par){
   let h='<div class="show'+(fraco?" showfraco":"")+'" id="showBox">'+
     '<div class="show-t"><span class="show-g">'+gd.emo+'</span>'+
     '<span class="show-n">'+gd.nome+'</span> \u{1F5DD}\uFE0F</div>'+
-    '<div class="show-f">Uma destas tr\u00eas palavras abre a quest\u00e3o. S\u00f3 uma. '+
-    '<label class="showtique"><input type="checkbox" onchange="revelarShow(this)"> </label></div>'+
+    '<div class="show-f">Uma destas tr\u00eas palavras abre a quest\u00e3o. S\u00f3 uma.</div>'+
+    '<label class="showabrir"><input type="checkbox" onchange="revelarShow(this)">'+
+    '<span>\u25b8 Abrir as tr\u00eas portas</span></label>'+
     '<div class="show-corpo" id="showCorpo" style="display:none">'+
     '<div class="show-i">Passo 1 \u00b7 abra as tr\u00eas e leia.</div>'+
     '<div class="show-p">';
@@ -6223,7 +6327,7 @@ function marcarTermos(txt,q){
     if(partes[k].charAt(0)==="<") continue;
     ordem.forEach(function(o){
       const esc=o.t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-      const re=new RegExp("(?<![\\wÀ-ú])("+esc+")(?![\\wÀ-ú])","i");
+      const re=new RegExp("(?<![\\wÀ-ú])("+esc+"(?:\\(\\))?)(?![\\wÀ-ú])","i");
       if(!re.test(partes[k])) return;
       partes[k]=partes[k].replace(re,
         '<span class="tchip t-'+tipoDoTermo(o.t,BANCO[qi]).k+'" role="button" tabindex="0" '+
@@ -6260,7 +6364,7 @@ function precisaVerFigura(){
 function travarPorFigura(){
   // liga o clique da lupa aqui: o atributo onclick nao alcanca o motor,
   // porque as funcoes vivem dentro da caixa fechada do antifraude
-  const im=document.querySelector(".figoficial img");
+  const im=document.querySelector(".figoficial img, .figm7 img");
   if(im && !im.dataset.lupa){
     im.dataset.lupa="1";
     im.removeAttribute("onclick");
@@ -6295,7 +6399,7 @@ function liberarPorFigura(){
 }
 function blocoCodigo(q){
   if(q.fig) return '<div class="figm7"><img src="'+q.fig+'" alt="figura da questão" onclick="ampliarFig(this)">'+
-    (q.figapoio?'<div class="figleg">🖼️ imagem de apoio · ela não aparece na prova</div>':'<div class="figleg">📄 imagem da prova · toque para ampliar</div>')+faixaProcure()+'</div>'+
+    (q.figapoio?'<div class="figleg">🖼️ imagem de apoio · ela não aparece na prova · <b>🔎 toque para ampliar</b></div>':'<div class="figleg">📄 imagem da prova · <b>🔎 toque para ampliar</b></div>')+faixaProcure()+'</div>'+
     (q.codigo?('<div class="pycode">'+pintarPython(q.codigo)+'</div>'):'');
   if(!q.codigo) return "";
   if(q.codigo.indexOf("figoficial")>=0)
@@ -6338,7 +6442,7 @@ function contextoEmDuas(ctx){
   });
   if(posCod<0 && (q.codigo||q.fig)) h+=blocoCodigo(q);
   if(ctx[1]) h+=contextoEmPartes(ctx[1],q,"D");
-  h+='<div class="dicagl">📖 As palavras destacadas abrem uma explicação. Toque nelas enquanto lê.</div>';
+  h+='<div class="dicagl">📖 As palavras em pastilha colorida abrem uma explicação. Toque nelas enquanto lê.</div>';
   h+='</div>';
   if(r.deg!=="d6"&&q.fala)
     h+='<div class="cfala"><div class="cfala-t">💬 '+q.colega+'</div>'+
@@ -6410,8 +6514,6 @@ function contextoEmDuas(ctx){
   h+='<div id="travaBox"></div>';
   h+='</div>';                       // fecha a coluna principal
   h+='<div class="col-lat">'+
-     '<div class="cardlat cl-dica"><div class="cl-t">💡 Dica</div><div class="cl-c">'+
-       ((r.deg==="d6"&&q.d6.dica)?q.d6.dica:d.dica)+'</div></div>'+
      (function(){
        const gr={cmd:{rot:"comandos",cor:"#FFAB19",l:[]},
                  conc:{rot:"conceitos",cor:"#2E5C8A",l:[]},
@@ -6420,12 +6522,12 @@ function contextoEmDuas(ctx){
        // so entra quem aparece de verdade nesta fase (item 3, CLD-283)
        // mapeia com o indice ORIGINAL antes de filtrar, pra abrirG continuar certo
        (q.glossario||[]).map(function(g,i){return {g:g,i:i}})
-        .filter(function(x){ return termoVisivel(q,r,x.g.t) })
         .forEach(function(x){ const g=x.g, i=x.i;
+         const naTela=termoVisivel(q,r,g.t);
          const tp=tipoDoTermo(g.t,q);
          const cb=corDoBloco(g.t);
          const est=cb?(' style="border-bottom-color:'+cb+';background:'+cb+'22;color:#2D2410"'):'';
-         gr[tp.k].l.push('<div class="gg-i"><button type="button" class="tchip t-'+tp.k+'"'+est+
+         gr[tp.k].l.push('<div class="gg-i'+(naTela?'':' gg-fora')+'" data-onde="'+(naTela?'':ondeAparece(BANCO.indexOf(q),g.t))+'"><button type="button" class="tchip t-'+tp.k+'"'+est+
            ' title="'+tp.rot+(cb?' · bloco do StartLab':'')+'" onclick="abrirG('+BANCO.indexOf(q)+','+i+')">'+
            g.t+'</button>'+
            '<span class="gg-d"> · '+g.d.split(/(?<=\.)\s+/)[0]+'</span></div>');
@@ -6438,6 +6540,8 @@ function contextoEmDuas(ctx){
                 '<div class="cl-c"><div class="gg-l">'+gr[k].l.join("")+'</div></div></div>';
        }).join("");
      })()+
+     '<div class="cardlat cl-dica"><div class="cl-t">💡 Dica</div><div class="cl-c">'+
+       ((r.deg==="d6"&&q.d6.dica)?q.d6.dica:dicaDaFase(r))+'</div></div>'+
      '<div id="latsoc"></div>'+
      '</div></div>';                 // fecha lateral e grid
   h+='</div>';
@@ -7505,6 +7609,7 @@ function MAXT_BASE(){
   return 2;                                       /* fases 1 a 5: 2 tentativas (Marcos 05:36) */
 }
 let ENG_ULT={};
+let SEL_ULT=null;   /* CLD-207 */
 function degrauDaTela(r){ return DEGRAUS[r&&r.deg]||DEGRAUS.d1 }
 function cartoes(){ return "" }
 /* a porta da palavra fica, como ferramenta a mais: nunca trava as alternativas e não dá bônus */
@@ -7564,6 +7669,7 @@ function cardProfessor(onde){
 }
 function chamadaHTML(){
   if(roteiro[iTela].t==="chk") return cardGabDisc(roteiro[iTela].aula)+cardProfessor("chk")+chamadaBase();
+  if(roteiro[iTela].t==="abertura") return cardChaveProfessor()+chamadaBase();
   return chamadaBase();
 }
 function chamadaBase(){
@@ -7667,7 +7773,7 @@ function blocoAjuda(r){
   if(registro[r.n]) return "";
   const rA=r;
   if(rA.fase6==="abre")
-    return caixa('<div class="m7s">📖 As palavras sublinhadas abrem o glossário. Toque quando quiser.</div>'+
+    return caixa('<div class="m7s">📖 As palavras em pastilha colorida abrem o glossário. Toque quando quiser.</div>'+
       '<div class="m7s">Uma tentativa só nesta tela.</div>'+
       '<div class="m7s">Se errar, as fases 1 a 5 desmontam esta questão. Depois você volta aqui.</div>');
   if(rA.fase6==="fecha"){
@@ -7680,7 +7786,7 @@ function blocoAjuda(r){
       '<div class="m7s">Uma tentativa só.</div>');
   }
   if(tentAtual<2)
-    return cardQuestaoProva(r)+cardMetodo(q)+ajudaAntes(r)+caixa('<div class="m7s">📖 As palavras sublinhadas abrem o glossário. Toque quando quiser.</div>'+
+    return cardQuestaoProva(r)+cardMetodo(q)+ajudaAntes(r)+caixa(dicaDeMetodo(r,q)+
       '<div class="m7s">'+((r.deg==="d6"&&q.d6.fmt==="VF")
         ?'Verdadeiro ou falso tem uma tentativa só. Leia com calma.'
         :(r.deg==="d6"&&!q.desafio)
@@ -7728,6 +7834,7 @@ function responder(i){
   const exigePos=precisaPos(r);
   if(exigePos && POS_VF!==posCerta(qq)) certo=false;
   const sel=QUARTETO_SEL?QUARTETO_SEL.slice():[i];
+  SEL_ULT=sel.slice();   /* CLD-207 · o BIT colado na alternativa precisa saber o que ele marcou */
   function ok(k){ return (parAtual.certos&&parAtual.certos.length)?!!parAtual.certos[k]:(k===parAtual.cert) }
   parAtual.alts.forEach(function(a,k){
     const b=document.getElementById("alt"+k); if(!b) return;
@@ -7758,15 +7865,37 @@ function responder(i){
       if(dg.fmt==="VF"&&dg.just) h+='<div class="m7resp"><b>Por quê:</b> '+dg.just+'</div>';
       h+='<div class="frase1">Clique em Próximo, na barra de baixo.</div>';
     } else {
-      const txt=parAtual.alts[i], io=(dg.alts||[]).indexOf(txt);
+      /* CLD-203 · quando a tela é de marcar três, o índice que chega aqui é o PRIMEIRO
+         clique — e ele costuma ser uma das certas. O comentário do erro tem de falar da
+         que estava ERRADA, senão diz "você marcou" apontando para uma frase correta. */
+      let iErr=i;
+      try{ (sel||[]).forEach(function(k){ if(iErr===i && !ok(k)) iErr=k }); if(!ok(i)) iErr=i }catch(e){}
+      const txt=parAtual.alts[iErr], io=(dg.alts||[]).indexOf(txt);
       const eng=(qq.dz&&io>=0&&qq.dz[String(io)])||qq.f6eng||(qq.eng?Object.keys(qq.eng)[0]:null);
       registro[r.n]={tent:9,falhou:true,ts:ts,errou:txt,eng:eng}; registro[r.n].selo=carimbar(r.n,9,ts);
       delete TENT_POR_PERG[r.n];
       try{ ajustarNivel(false); calibrarNivel(); pularForaDoNivel(r.qi) }catch(e){}
       const nf=fasesDoNivel(r.qi).length||3;
+      /* CLD-203 · o comentário do erro NASCE AQUI, na tela em que a errada foi marcada.
+         Marcos 23/09 21:28: "esse defeito não é sobre a tela 07, mas está em relação à tela 05
+         quando escolhe a alternativa errada, então se vai mostrar este comentário, ele deveria
+         ser na tela 5". Antes, a trilha deste erro só aparecia lá na frente, no BIT de uma fase.
+         Mostra POR QUE a marcada não serve — nunca qual era a certa: ele ainda vai refazer
+         esta mesma questão na volta ao tema. */
+      let contraAbre="";
+      try{
+        const E=(qq.eng&&eng)?qq.eng[eng]:null, tr=(E&&E.trilha)||[];
+        /* CLD-207 · a trilha saiu daqui: ela agora fica COLADA na alternativa que ele
+           marcou (bitNaAlternativa). Aqui sobra só o aviso de onde está a resposta. */
+        if(tr.length) contraAbre='<div class="m7contra"><b class="t">🔎 O que aconteceu na sua escolha</b>'+
+          '<div class="lin">❌ Você marcou: <i>'+chipar(txt)+'</i></div>'+
+          '<div class="lin">👆 O BIT explicou, logo abaixo dessa frase, por que ela não serve.</div>'+
+          '<div class="lin">A resposta certa fica para a volta ao tema. Antes dela, vêm as fases.</div></div>';
+      }catch(e){}
       h='<div class="frase1">'+FRASE_FOCO[n%FRASE_FOCO.length]+'</div>'+
         '<div class="veredito no">✘ Ainda não.</div>'+
         (exigePos?fraseMontada(sel):"")+
+        contraAbre+
         '<div class="frase1">🥪 Vamos desmontar esta questão em '+nf+' fases.</div>'+
         '<div class="frase1">Depois você volta aqui para a 2ª tentativa.</div>'+
         '<div class="frase1">Clique em Próximo, na barra de baixo.</div>';
@@ -7817,7 +7946,11 @@ function responder(i){
       } else {
         const cs=[]; parAtual.alts.forEach(function(a,k){ if(ok(k)){ cs.push(a);
           const b=document.getElementById("alt"+k); if(b) b.classList.add("certo") } });
-        h+='<div class="m7resp"><b>As duas certas eram:</b><br>• '+cs.join('<br>• ')+'</div>';
+        h+='<div class="m7resp"><b>As duas certas eram:</b><br>• '+cs.map(chipar).join('<br>• ')+'</div>';
+        /* CLD-203 · o comentário do erro fica NA TELA ONDE ELE ERROU. Antes, quando a tela
+           tinha uma tentativa só, o estudante fechava sem ler por que a escolhida não servia
+           — e esse comentário só reaparecia lá na frente, na tela do tema. */
+        h+=cardContraste(dg,sel,ok);
       }
       h+='<div class="frase1">Clique em Próximo, na barra de baixo.</div>';
     }
@@ -8080,6 +8213,10 @@ function corrigirTela(certo, ok){
   });
   const c=document.querySelector("#palco .cperg, #palco .croxo");
   if(c){ c.style.borderColor=certo?"#2E7D32":"#C62828"; c.style.background=certo?"#E8F5E9":"#FDECEF" }
+  /* CLD-207 · o BIT também aparece colado na errada quando a tela fecha.
+     Só nas que ELE marcou: numa tela de marcar três, pôr o BIT nas quatro erradas
+     encheria a tela de texto que ele não escolheu e não vai ler. */
+  try{ if(!certo && SEL_ULT && SEL_ULT.length) bitNaAlternativa(SEL_ULT, ok) }catch(e){}
 }
 /* frases: gentis, de liderança, nunca autoritárias */
 const FRASE_1A=["Você leu com atenção. Isso inspira a turma.","Certo de primeira. Sua calma fez a diferença.",
@@ -8226,7 +8363,7 @@ function telaCapa(r){
     sec(2,"#1B7A3A","#E9F6ED","O que cai nesta aula",[
       temas.length+" temas, cada um com a questão do jeito que cai na prova.",
       "Habilidade: "+(a.hab||a.bncc||"—")+".",
-      pal?("Palavras do glossário: "+pal+"."):"As palavras difíceis ficam sublinhadas."])+
+      pal?("Palavras do glossário: "+pal+"."):"As palavras difíceis ficam em pastilha colorida."])+
     sec(3,"#5B2E91","#F4EEFB","Os temas desta aula",temas.map(function(qi){ return "Tema "+BANCO[qi].ordem+" · "+BANCO[qi].titulo }))+
     sec(4,"#37474F","#ECEFF1","Como funciona",[
       "Primeiro vem a questão do jeito que cai na prova.",
@@ -8535,12 +8672,80 @@ function pintarChip(el){
     el.style.setProperty("font-family","Consolas,'Courier New',monospace","important");
   }
 }
-function pintarPastilhas(raiz){ try{ (raiz||document).querySelectorAll(".tchip").forEach(pintarChip) }catch(e){} }
+/* ==================== CLD-203 · A PALAVRA DO PYTHON DENTRO DO NOME COMPOSTO
+   Marcos 23/09 21:28: "'for' é o nome do 'laço'? pq na explicação estava de exemplo apenas
+   'for' e se duas coisas separadas, não deveria estar separado ou ao menos o for entre aspas?"
+   São duas coisas, sim: LAÇO é o nome da estrutura (português) e FOR é a palavra que o
+   Python entende (código). Escrever as duas do mesmo jeito é o que confundiu.
+   Agora, em pastilhas como «laço for», «laço while» ou «comando print», só a palavra do
+   Python fica com cara de código — fundo escuro e fonte de máquina. O estudante vê na
+   própria pastilha o que ele digita e o que é só o nome da coisa. */
+const PY_DENTRO=PY_KWS.concat(PY_BIS);
+function partirChipComposto(el){
+  try{
+    if(el.querySelector(".m7kwin")) return;
+    const no=el.childNodes[0];
+    if(!no || no.nodeType!==3) return;
+    const t=String(no.nodeValue||"");
+    const ws=t.trim().split(/\s+/);
+    if(ws.length<2) return;
+    const alvo=ws.filter(function(w){ return PY_DENTRO.indexOf(w.toLowerCase())>=0 });
+    if(alvo.length!==1) return;
+    const esc=alvo[0].replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+    const re=new RegExp("(?<![\\wÀ-ÿ])("+esc+")(?![\\wÀ-ÿ])");
+    const frag=document.createElement("span");
+    frag.innerHTML=t.replace(re,'<i class="m7kwin">$1</i>');
+    el.replaceChild(frag, no);
+    el.title=(el.title?el.title+" · ":"")+alvo[0]+" é a palavra do Python; laço/comando é o nome da estrutura";
+  }catch(e){}
+}
+function pintarPastilhas(raiz){ try{ (raiz||document).querySelectorAll(".tchip").forEach(function(el){
+  pintarChip(el); partirChipComposto(el);
+}) }catch(e){} }
 try{ new MutationObserver(function(){ pintarPastilhas() }).observe(document.documentElement,{childList:true,subtree:true}) }catch(e){}
 
 
 /* ==================== CLD-144 · contraste na 2ª tentativa (Marcos 22/09 06:41) ====================
    Mostra por que a errada marcada não serve e um exemplo da ideia certa, sem copiar a frase certa. */
+/* CLD-203 · o comentário do erro é PASTILHADO e fica NA TELA DO ERRO.
+   Marcos 23/09 21:28: "o 'laço for'... não está em pastilha" e "esse defeito não é sobre a
+   tela 07, mas está em relação à tela 05 quando escolhe a alternativa errada, então se vai
+   mostrar este comentário, ele deveria ser na tela 5".
+   chipar() passa o texto por marcarTermos, a mesma função que faz a pastilha do enunciado:
+   assim "laço for" dentro do comentário abre o glossário igual a qualquer outra pastilha. */
+function chipar(txt, qForcada){
+  try{
+    const r=(typeof iTela!=="undefined")?roteiro[iTela]:null;
+    const q=qForcada||((r&&BANCO[r.qi])||null);
+    if(!q||!q.glossario||!q.glossario.length) return txt;
+    const qi=BANCO.indexOf(q);
+    const ordem=q.glossario.map(function(g,i){ return {t:g.t,i:i} })
+      .sort(function(a,b){ return String(b.t).length-String(a.t).length });
+    const partes=String(txt||"").split(/(<[^>]*>)/);
+    let dentro=0;
+    for(let k=0;k<partes.length;k++){
+      if(partes[k].charAt(0)==="<"){
+        if(/class="[^"]*(tchip|pycode|sc-)/.test(partes[k])) dentro++;
+        else if(/^<\//.test(partes[k]) && dentro) dentro--;
+        continue;
+      }
+      if(dentro) continue;
+      ordem.forEach(function(o){
+        const esc=String(o.t).replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+        /* o "()" que vem colado no nome do comando entra DENTRO da pastilha:
+           print() é uma coisa só na tela do estudante, não "print" mais "()" solto */
+        const re=new RegExp("(?<![\\wÀ-ÿ])("+esc+"(?:\\(\\))?)(?![\\wÀ-ÿ])","i");
+        if(!re.test(partes[k])) return;
+        let cls="", rot="";
+        try{ const tp=tipoDoTermo(o.t,q); cls=" t-"+tp.k; rot=tp.rot||"" }catch(e){}
+        partes[k]=partes[k].replace(re,
+          '<span class="tchip'+cls+'" role="button" tabindex="0" title="'+rot+'" '+
+          'onclick="event.stopPropagation();abrirG('+qi+','+o.i+')">$1</span>');
+      });
+    }
+    return partes.join("");
+  }catch(e){ return txt }
+}
 function cardContraste(dg,sel,ok){
   try{
     const erradas=[]; sel.forEach(function(k){ if(ok(k)) return; const t=parAtual.alts[k]; const j=(dg.no||[]).indexOf(t);
@@ -8548,24 +8753,95 @@ function cardContraste(dg,sel,ok){
     if(!erradas.length && !dg.ex) return "";
     let h='<div class="m7contra"><b class="t">🔎 Para acertar na próxima</b>';
     erradas.forEach(function(e){
-      h+='<div class="lin">❌ Você marcou: <i>'+e.t+'</i></div>';
-      if(e.m) h+='<div class="lin">👉 Ela não serve porque '+e.m.replace(/^\s*porque\s+/i,"").replace(/^./,function(x){return x.toLowerCase()})+'</div>';
+      h+='<div class="lin">❌ Você marcou: <i>'+chipar(e.t)+'</i></div>';
+      if(e.m) h+='<div class="lin">👉 Ela não serve porque '+chipar(e.m.replace(/^\s*porque\s+/i,"").replace(/^./,function(x){return x.toLowerCase()}))+'</div>';
     });
-    if(dg.ex) h+='<div class="lin">💡 Exemplo da ideia certa: '+dg.ex+'</div>';
+    if(dg.ex) h+='<div class="lin">💡 Exemplo da ideia certa: '+chipar(dg.ex)+'</div>';
     return h+'</div>';
   }catch(e){ return "" }
 }
 
 /* ---- CLD-146 · correções de aplicação (Marcos 22/09 11:08) ---- */
-/* errou: só as escolhidas que estão erradas ficam vermelhas com ✘; as certas não aparecem */
+/* CLD-203 · Marcos voltou atrás (23/09 21:28): "eu havia pedido para mostrar só alternativas
+   escolhidas que fossem erradas, as certas não mostrasse, mas agora volto atrás, pq se
+   identificou a errada, é óbvio identificar a certa, então pode mostrar o ticado com verde
+   também e mudar a cor do card da alternativa para verde".
+   Vale só para as ESCOLHIDAS: quem ele marcou e acertou fica verde com ✔; quem ele marcou e
+   errou fica vermelha com ✘. As que ele NÃO marcou continuam neutras — senão a segunda
+   tentativa viraria cópia da primeira. */
 function marcarErradas(sel, ok){
   (sel||[]).forEach(function(k){
-    if(ok(k)) return;
     const b=document.getElementById("alt"+k); if(!b) return;
+    const l=b.querySelector(".altletra");
+    if(ok(k)){ b.classList.add("certo","m7acertou"); if(l) l.textContent="✔"; return }
     b.classList.add("errado","m7errou");
-    const l=b.querySelector(".altletra"); if(l) l.textContent="✘";
+    if(l) l.textContent="✘";
   });
+  bitNaAlternativa(sel, ok);
 }
+
+/* ==================== CLD-207 · O BIT EM DOIS LUGARES (Marcos 24/09 06:03)
+   "o BIT está com duas funções e dois momentos. Um: ele justifica no lugar do estudante
+    por que a resposta escolhida está errada. Dois: na revisão da 1ª AAIM ele ajuda com
+    trilhas a encontrar a resposta correta. (...) Então não é tirar de baixo ou subir,
+    e sim mostrar em dois locais."
+   LOCAL 1 · em cima, acionado pelo estudante ANTES de responder · já existe no card de ajuda.
+   LOCAL 2 · aqui: embaixo de CADA alternativa errada que ele marcou, logo após confirmar.
+   Este é o que faltava. Fica colado na frase que ele escolheu, não no rodapé da tela. */
+/* CLD-207 · qual engano combina com a frase marcada · casa pelo termo do glossário */
+function engPorTexto(q, txt){
+  try{
+    if(!q||!q.eng) return null;
+    const t=" "+String(txt||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"")+" ";
+    let achado=null;
+    Object.keys(q.eng).forEach(function(k){
+      if(achado) return;
+      const e=q.eng[k], termo=String(e&&e.termo||"").toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g,"").trim();
+      if(termo && t.indexOf(termo)>=0) achado=e;
+    });
+    return achado;
+  }catch(e){ return null }
+}
+function bitNaAlternativa(sel, ok){
+  try{
+    const r=roteiro[iTela]; if(!r||r.t!=="perg") return;
+    const dg=(BANCO[r.qi]||{})[r.deg]||{};
+    const F=(nomeAjudante()==="B.IA"), emo=F?"💡":"🤖";
+    (sel||[]).forEach(function(k){
+      if(ok(k)) return;
+      const b=document.getElementById("alt"+k); if(!b) return;
+      if(b.nextElementSibling && b.nextElementSibling.classList.contains("m7bitalt")) return;
+      const txt=parAtual.alts[k];
+      const j=(dg.no||[]).indexOf(txt);
+      let corpo="";
+      /* fases 1 a 5, QUEM e QUANTO: o banco traz o motivo pronto, frase por frase */
+      const m=(j>=0&&dg.nm)?dg.nm[j]:"";
+      if(m){
+        corpo='<span class="l">'+chipar(String(m).replace(/^\s*porque\s+/i,"")
+              .replace(/^./,function(x){return x.toLowerCase()}))+'</span>';
+      } else {
+        /* a questão do tema não tem motivo por frase: tem a trilha do engano.
+           Acho qual engano combina com a frase que ele marcou, pelo termo. */
+        const E=engPorTexto(BANCO[r.qi], txt);
+        if(E && E.trilha && E.trilha.length)
+          corpo=E.trilha.map(function(s){ return '<span class="l">• '+chipar(s)+'</span>' }).join("");
+      }
+      if(!corpo) return;
+      b.insertAdjacentHTML("afterend",
+        '<div class="m7bitalt'+(F?" bia":"")+'"><span class="be">'+emo+'</span>'+
+        '<span class="tx"><b>'+(F?"B.IA":"BIT")+' · por que esta não serve</b>'+
+        corpo+'</span></div>');
+    });
+  }catch(e){}
+}
+
+/* CLD-207 · a porta da palavra sai da tela enquanto não estiver inteira.
+   Ela afirmava, em cada uma das três portas, "é esta que abre a questão" — inclusive nas
+   duas falsas. No motor de agosto isso era de propósito: o estudante era OBRIGADO a
+   conferir nas quatro frases antes de liberar. No M7 eu tirei a obrigação e deixei a
+   afirmação falsa sozinha na tela. Enfeite que mente é pior que ausência. */
+function montarShow(){ return "" }
 /* depois de responder, fechar o glossário NÃO destrava as alternativas antigas */
 function destravarAlternativas(){
   if(typeof respondeuAgora!=="undefined" && respondeuAgora) return;
@@ -9268,7 +9544,7 @@ function cartoes(q,r){
   const cont=todos.filter(function(g){ return !METODO_CHAVE[String(g.t).toLowerCase()] });
   const glos=cont.map(function(g){ return '<b>'+g.t+'</b>' }).join(" · ");
   const c1=card("fc1","#2E5C8A","🔍","INDO MAIS FUNDO",
-    "As palavras desta questão estão nas pastilhas douradas do texto.",
+    "As palavras desta questão estão nas pastilhas coloridas do texto.",
     (glos?'<div class="fx">Palavras desta questão: '+glos+'.</div>':'')+
     '<div class="fx">Cada pastilha abre com o significado, um exemplo e a comparação.</div>'+
     (met.length?'<div class="fx" style="margin-top:6px"><b>Palavras do método</b> — elas não são do assunto, '+
@@ -9301,8 +9577,16 @@ const NIVEL_LINHA=[
  {n:5,emo:"🔭",tit:"NAV.05 · desafio",txt:"as 3 fases finais · 2 tentativas · quase sem ajuda"}
 ];
 function botaoNivel(){
-  return '<button type="button" class="m7nivbt" onclick="abrirNivel()">🎚️ Nível: '+
-         (NIVEL_NOME[NIVEL]||NIVEL)+' · trocar</button>';
+  /* CLD-200 · Marcos: "tem este trocar duas vezes, o que significa isso?"
+     Os dois botões diziam "· trocar" e a repetição confundia. O ícone ⇄ já diz que troca. */
+  /* CLD-201 · Marcos: "NAV.03 está sem a palavra que define na frente".
+     O clima do NAV volta ao botão: ⇄ Nível 🧩 NAV.03 · peça trocada */
+  const nv=NIVEL_NOME[NIVEL]||String(NIVEL);
+  const cod=(nv.match(/NAV\.\d\d/)||[])[0];
+  const clima=(cod&&NAV_CLIMA[cod])?" · "+NAV_CLIMA[cod]:"";
+  return '<div class="m7bts">'+
+    '<button type="button" class="m7nivbt" onclick="abrirNivel()">⇄ Nível '+nv+clima+'</button>'+
+    botaoCaminho()+botaoGlossario()+'</div>';
 }
 function fecharNivel(){ const e=document.getElementById("m7nivjan"); if(e) e.remove() }
 /* CLD-190 · Marcos 09:11: pelo botão o ESTUDANTE só SOBE.
@@ -9552,7 +9836,7 @@ function bitFechado(id, passos, obrigatorio){
       '<span><span class="bt">'+(F?"B.IA":"BIT")+' · trilha do seu erro</span>'+
       '<span class="bs">'+conv+'</span></span></button>'+
     '<div class="m7bitcorpo'+cls+'" id="bitc-'+id+'"'+(aberto?"":' style="display:none"')+'>'+
-      '<ol>'+passos.map(function(s){ return '<li>'+s+'</li>' }).join("")+'</ol></div>';
+      '<ol>'+passos.map(function(s){ return '<li>'+chipar(s)+'</li>' }).join("")+'</ol></div>';
 }
 
 /* ==================== CLD-191 · O ENUNCIADO TAMBÉM ENCURTA NO APOIO
@@ -9578,7 +9862,7 @@ function cardMetodo(q){
   return '<button type="button" class="m7bit m7met" id="bit-met" aria-expanded="'+(aberto?"true":"false")+'"'+
       ' onclick="abrirBit(\'met\')"><span class="be">📘</span>'+
       '<span><span class="bt">Palavras do método</span>'+
-      '<span class="bs">Não são do assunto. São do jeito de ler a prova.</span></span></button>'+
+      '<span class="bs">Toque para abrir. Não são do assunto: são do jeito de ler a prova.</span></span></button>'+
     '<div class="m7bitcorpo m7met" id="bitc-met"'+(aberto?"":' style="display:none"')+'>'+
       met.map(function(g){ return '<div class="fx"><b>'+g.t+'</b> · '+(g.d||g.oque||"")+'</div>' }).join("")+
     '</div>';
@@ -9630,7 +9914,15 @@ function retrospecto(qi){
 }
 
 /* CLD-197 · a ordem canônica das 7 chaves, que é a ordem da escada do tema */
-const ORDEM_FASES=["d1","d2","d7","d3","d8","d4","d5"];
+/* CLD-199 · TRAVA DE SEGURANÇA. As fases d7 e d8 foram escritas hoje por agentes e ainda
+   NÃO passaram pela segunda leitura de sentido — a regra que eu mesmo escrevi no CLD-195
+   e não segui. No 8º ano os estudantes acharam telas sem sentido. Enquanto a auditoria não
+   fecha, elas ficam FORA do caminho do estudante: continuam no banco e no sumário, mas não
+   abrem. Basta virar esta chave para religá-las. */
+const FASES_NOVAS_ON=false;
+const ORDEM_FASES=FASES_NOVAS_ON
+  ? ["d1","d2","d7","d3","d8","d4","d5"]
+  : ["d1","d2","d3","d4","d5"];
 /* d7 = QUEM (identidade de gente, logo depois de O QUÊ)
    d8 = QUANTO (aplicação de medida, logo depois de COMO)
    Nem todo tema tem as duas: quando não há pessoa agindo ou não há número para contar,
@@ -9646,12 +9938,291 @@ try{
     dica:"A resposta é um número. Conte no próprio material, com calma."};
 }catch(e){}
 
+/* ==================== CLD-199 · CENÁRIO NA MARGEM LILÁS (Marcos 23/09 16:44)
+   "na cor de fundo lilás, se você usasse um cenário envolvendo a temática de cada fase:
+    NAV.00 o tema é extraterrestre, naves espaciais, então nas laterais do quadro branco
+    precisam aparecer emojis se movimentando de naves espaciais, e assim para os demais
+    também, onde há magos e todas as outras fases. Assim consigo ver mais fácil onde o
+    estudante está."
+   A margem passa a ter o cenário do NAV daquela tela: emojis subindo devagar dos dois
+   lados, sem atravessar o quadro branco e sem tocar em nada clicável. */
+const CENA_NAV={
+  "NAV.00":{nome:"espaço",   emo:["🛸","🚀","🪐","⭐","🌟","👽","☄️","🌙"]},
+  "NAV.01":{nome:"magia",    emo:["🧙","✨","🪄","🔮","🧪","📜","🕯️","🐉"]},
+  "NAV.02":{nome:"circo",    emo:["🎪","🤹","🎈","🎭","🦁","🎺","🎟️","🤡"]},
+  "NAV.03":{nome:"quebra-cabeça",emo:["🧩","🔧","🪛","⚗️","🧱","📐","🔩","🧰"]},
+  "NAV.04":{nome:"oficina",  emo:["⚙️","🔨","🛠️","🔌","🧲","⛏️","🪚","🔋"]},
+  "NAV.05":{nome:"observatório",emo:["🔭","🌌","📡","🧭","🛰️","💫","🔬","📈"]},
+  "NAV.06":{nome:"mapa",     emo:["🗺️","🧭","⛳","🚩","🏕️","🥾","🗻","🌲"]},
+  "NAV.07":{nome:"investigação",emo:["🔍","📋","🕵️","📌","🗂️","💡","📎","🖊️"]},
+  "NAV.OF":{nome:"prova",    emo:["📄","✏️","📝","⏱️","📚","🎓","📊","✅"]}
+};
+function navDaTela(r){
+  if(!r || r.t!=="perg") return null;
+  if(nivelDaTela(r)<=0) return "NAV.00";        /* o apoio tem cenário próprio */
+  if(r.deg==="d6") return r.fase6==="abre"?"NAV.07":"NAV.06";
+  const n=navDaTela_porDegrau(r.deg);
+  return n;
+}
+function navDaTela_porDegrau(d){
+  return {d1:"NAV.01",d2:"NAV.02",d7:"NAV.02",d3:"NAV.03",d8:"NAV.03",
+          d4:"NAV.04",d5:"NAV.05"}[d]||"NAV.01";
+}
+function pintarCena(r){
+  const alvo=document.getElementById("m7cena")||(function(){
+    const d=document.createElement("div"); d.id="m7cena"; d.className="m7cena";
+    d.setAttribute("aria-hidden","true");
+    document.body.insertBefore(d,document.body.firstChild); return d;
+  })();
+  const nv=navDaTela(r);
+  if(!nv || !CENA_NAV[nv]){ alvo.innerHTML=""; alvo.dataset.nav=""; return }
+  if(alvo.dataset.nav===nv) return;              /* já está pintada · não redesenha à toa */
+  alvo.dataset.nav=nv;
+  const c=CENA_NAV[nv]; let h="";
+  for(let lado=0; lado<2; lado++){
+    h+='<div class="m7cl '+(lado?"dir":"esq")+'">';
+    for(let i=0;i<7;i++){
+      const e=c.emo[(i+lado*3)%c.emo.length];
+      const dur=(16+((i*7+lado*5)%14)), atraso=-(i*3+lado*2), x=(4+((i*13+lado*7)%52));
+      h+='<span class="m7ce" style="--d:'+dur+'s;--a:'+atraso+'s;--x:'+x+'%">'+e+'</span>';
+    }
+    h+='</div>';
+  }
+  alvo.innerHTML=h;
+}
+
+/* ==================== CLD-199 · O CAMINHO DIRETO · SÓ OS TEMAS
+   (Marcos 23/09 16:46: "vários estudantes passaram mais de uma aula para fazer só o
+   M7 do 8º e nem acabaram, tiveram que largar pela metade e ir pro Alura, e com isso o
+   resultado não foi bom... se não fazem por compreensão, ao menos fazem o Alura com
+   verificação antes")
+   Então o estudante passa a poder escolher o caminho:
+   · CAMINHO COMPLETO · erra o tema e desmonta em fases (o que existe hoje)
+   · CAMINHO DIRETO · só os 15 temas, do jeito que caem na prova, sem fases
+   No direto ele vê os 15 temas e chega ao gabarito da dissertativa dentro de uma aula.
+   A nota sai igual: quem acerta o tema de primeira já ganhava o crédito cheio. */
+let CAMINHO="direto";   /* CLD-207 · abre na missão principal */
+function trocarCaminho(c){
+  CAMINHO=(c==="direto")?"direto":"completo";
+  if(CAMINHO==="direto"){
+    /* marca como pulada toda fase ainda não respondida · as telas continuam no sumário */
+    const ts=Date.now();
+    roteiro.forEach(function(x){
+      if(x.t==="perg" && x.rech && !x.discf && !registro[x.n]){   /* CLD-207 · a dissertativa fica */
+        registro[x.n]={tent:0,pulado:true,ts:ts}; registro[x.n].selo=carimbar(x.n,0,ts);
+      }
+    });
+  }
+  try{ salvarProgresso() }catch(e){}
+  fecharCaminho(); render();
+}
+function fecharCaminho(){ const e=document.getElementById("m7camjan"); if(e) e.remove() }
+/* ==================== CLD-207 · A TELA DE MISSÕES (Marcos 24/09 06:03 e 06:29)
+   "pode até entrar como missão principal os 15 temas, assim como o FACA já faz, e depois
+    as missões secundárias" · "ao invés de ficar travando ou obrigando a entrar em modo
+    sanduíche" · e a hierarquia que ele cravou às 06:22:
+      principal  = os 15 temas (NAV.07) — o que cai na prova
+      secundária = NAV.08, justificar cada alternativa — ainda em construção
+      terciária  = as fases NAV.01 a NAV.05 — desmontar o tema
+      fora da fila = NAV.00, texto curto: não é missão, é a roupa do mesmo conteúdo.
+   O problema que isto resolve: o estudante precisa VER os 15 temas dentro de uma aula,
+   inclusive a dissertativa, antes de ir para a Alura. Em setembro ele não via. */
+/* CLD-207 · o arquivo abre na MISSÃO PRINCIPAL. Antes abria no caminho completo, que
+   desmonta o tema a cada erro — e foi isso que fez o estudante não chegar ao 15º tema
+   dentro da aula. As fases continuam existindo: são a missão 2, a um toque de distância. */
+let CAMINHO_INICIADO=false, MISSOES_OFERECIDAS=false;
+function aplicarCaminhoInicial(){
+  if(CAMINHO_INICIADO) return;
+  /* só depois que o estudante se identificou: antes disso o roteiro ainda está sendo
+     montado e marcar tela como pulada faz o motor saltar a tela do combinado */
+  if(typeof estudante==="undefined" || !estudante) return;
+  const r0=roteiro[iTela];
+  if(!r0 || r0.t==="abertura" || r0.t==="conviv") return;
+  CAMINHO_INICIADO=true;
+  if(CAMINHO!=="direto") return;
+  const ts=Date.now();
+  roteiro.forEach(function(x){
+    /* CLD-207 · as 5 partes da dissertativa (discf) NÃO são fases do sanduíche: são o
+       próprio tema dissertativo. Pulá-las zerava a dissertativa e derrubava a nota máxima
+       do caminho direto de 10,00 para 9,33. Defeito que já existia em trocarCaminho. */
+    if(x.t==="perg" && x.rech && !x.discf && !registro[x.n]){
+      registro[x.n]={tent:0,pulado:true,ts:ts}; registro[x.n].selo=carimbar(x.n,0,ts);
+    }
+  });
+  try{ salvarProgresso() }catch(e){}
+}
+/* depois do 1º tema, a tela de missões aparece UMA vez: o estudante fica sabendo que as
+   outras existem, sem ter escolhido no escuro antes de ver como é a tela. */
+function oferecerMissoes(){
+  if(MISSOES_OFERECIDAS) return;
+  const feitos=roteiro.filter(function(x){ return x.fase6==="abre" && registro[x.n] }).length;
+  if(feitos<1) return;
+  MISSOES_OFERECIDAS=true;
+  try{ salvarProgresso() }catch(e){}
+  setTimeout(function(){ try{ abrirCaminho() }catch(e){} }, 400);
+}
+function apoioLigado(){ return NIVEL<=0 && NIVEL_TRAVADO }
+function entrarApoio(){
+  if(apoioLigado()){ NIVEL_TRAVADO=false; NIVEL=1; }
+  else { NIVEL=0; NIVEL_CALIBRADO=true; NIVEL_TRAVADO=true; NIVEL_CHAVE={}; NIVEL_TIPO={}; }
+  try{ APOIO_ESCOLHIDO=apoioLigado(); salvarProgresso() }catch(e){}
+  fecharCaminho(); render();
+}
+let APOIO_ESCOLHIDO=false;
+function abrirCaminho(){
+  fecharCaminho();
+  /* conta TEMA, não tela: a dissertativa é um tema e não tem par abre/fecha,
+     então contar só por fase6==="abre" devolvia 14 onde o Marcos sempre diz 15. */
+  const temas=BANCO.length;
+  const fases=roteiro.filter(function(x){ return x.rech && !x.discf }).length;
+  const qFeitos={};
+  roteiro.forEach(function(x){ if(x.t==="perg" && x.fase6==="abre" && registro[x.n]) qFeitos[x.qi]=1 });
+  roteiro.forEach(function(x){ if(x.discf && registro[x.n]) qFeitos[x.qi]=1 });
+  const feitos=Object.keys(qFeitos).length;
+  const d=document.createElement("div"); d.id="m7camjan"; d.className="m7nivjan";
+  d.innerHTML='<div class="cx"><div class="tt">🧭 As missões desta revisão</div>'+
+    '<div class="sb">A principal é a que vale a prova. Faça ela primeiro.</div>'+
+
+    '<button type="button" class="op mprin'+(CAMINHO==="direto"?" on":"")+'" onclick="trocarCaminho(\'direto\')">'+
+      '<span class="e">🎯</span><span class="tx"><b>MISSÃO PRINCIPAL · os '+temas+' temas</b>'+
+      '<span class="d">Do jeito que caem na prova. Sem fases no meio.</span>'+
+      '<span class="d">Dá para terminar numa aula.</span>'+
+      '<span class="d">Você já fez '+feitos+' de '+temas+'.</span></span></button>'+
+
+    '<button type="button" class="op'+(CAMINHO==="completo"?" on":"")+'" onclick="trocarCaminho(\'completo\')">'+
+      '<span class="e">🥪</span><span class="tx"><b>MISSÃO 2 · desmontar o tema</b>'+
+      '<span class="d">Errou o tema? Ele se abre em fases até você entender.</span>'+
+      '<span class="d">'+temas+' temas e até '+fases+' fases.</span>'+
+      '<span class="d">Demora mais. Faça depois dos temas.</span></span></button>'+
+
+    '<div class="op fech"><span class="e">⚽</span><span class="tx"><b>MISSÃO 3 · justificar cada alternativa</b>'+
+      '<span class="d">Dizer por que cada frase é gol, trave, fora ou gol contra.</span>'+
+      '<span class="d">🔒 Ainda em construção. Entra numa próxima versão.</span></span></div>'+
+
+    '<button type="button" class="op apoio'+(apoioLigado()?" on":"")+'" onclick="entrarApoio()">'+
+      '<span class="e">🛸</span><span class="tx"><b>TEXTO CURTO'+(apoioLigado()?" · ligado":"")+'</b>'+
+      '<span class="d">Mesmas perguntas, escritas em frases curtas.</span>'+
+      '<span class="d">Vale a mesma nota. Não é missão: é só o jeito de ler.</span>'+
+      '<span class="d">'+(apoioLigado()?"Toque para voltar ao texto normal.":"Toque se o texto estiver difícil hoje.")+'</span></span></button>'+
+
+    '<div class="obs">Todas contam nota igual. Você pode trocar de missão quando quiser, '+
+    'por este mesmo botão no alto da tela.</div>'+
+    '<button type="button" class="fechar" onclick="fecharCaminho()">← Voltar</button></div>';
+  document.body.appendChild(d);
+}
+function botaoCaminho(){
+  const m=(CAMINHO==="direto")?"🎯 principal":"🥪 desmontar";
+  return '<button type="button" class="m7nivbt" onclick="abrirCaminho()">🧭 Missão · '+m+
+         (apoioLigado()?" · 🛸":"")+'</button>';
+}
+/* CLD-200 · o glossário da questão passa a ter botão próprio na faixa.
+   Antes só dava para abrir tocando numa palavra sublinhada do texto — e quando a palavra
+   não aparecia naquela tela, não havia caminho nenhum. */
+function botaoGlossario(){
+  const r=roteiro[iTela]; if(!r || r.t!=="perg") return "";
+  const q=BANCO[r.qi]||{}; const n=((q.glossario)||[]).length;
+  if(!n) return "";
+  return '<button type="button" class="m7nivbt" onclick="abrirGlosQuestao()">📖 Palavras ('+n+')</button>';
+}
+function abrirGlosQuestao(){
+  const r=roteiro[iTela]; if(!r || r.t!=="perg") return;
+  const qi=r.qi, q=BANCO[qi]||{}, g=(q.glossario)||[];
+  if(!g.length) return;
+  fecharCaminho();
+  const d=document.createElement("div"); d.id="m7camjan"; d.className="m7nivjan";
+  let h='<div class="cx"><div class="tt">📖 As palavras desta questão</div>'+
+    '<div class="sb">Toque numa palavra para ler o significado, o exemplo e a comparação.</div>';
+  g.forEach(function(x,i){
+    const met=METODO_CHAVE[String(x.t).toLowerCase()];
+    h+='<button type="button" class="op" onclick="fecharCaminho();abrirG('+qi+','+i+')">'+
+       '<span class="e">'+(met?"📘":"📖")+'</span><span class="tx"><b>'+x.t+'</b>'+
+       '<span class="d">'+String(x.d||x.oque||"").slice(0,90)+'</span></span></button>';
+  });
+  h+='<div class="obs">As de 📘 são palavras do método: não são do assunto, são do jeito de ler a prova.</div>'+
+     '<button type="button" class="fechar" onclick="fecharCaminho()">← Voltar</button></div>';
+  d.innerHTML=h; document.body.appendChild(d);
+}
+
+/* CLD-200 · a dica de antes de responder passou a ensinar O CAMINHO, não o glossário.
+   Marcos: "a dica da B.IA soa mais sobre o glossário do que sobre como encontrar o que
+   precisa". Agora ela diz onde procurar, conforme a chave da pergunta, e só menciona a
+   pastilha quando existe pastilha naquela tela. */
+/* CLD-201 · nenhuma dica NEGA o que a pergunta pede. Só diz onde procurar.
+   A de O QUÊ cobre os dois casos, porque a fase de identidade pergunta tanto
+   o nome quanto a função — foi essa a contradição que o Marcos achou. */
+const DICA_POR_CHAVE={
+  "ONDE":"Procure o LUGAR: em que parte do texto ou do código a coisa aparece.",
+  "O QUÊ":"Procure a IDENTIDADE: o que aquilo é, ou o que ele faz.",
+  "QUEM":"Procure QUEM AGE. Dentro do programa quem age é um comando, não uma pessoa.",
+  "COMO":"Procure o MODO: o passo e a ordem em que a coisa acontece.",
+  "QUANTO":"Procure o NÚMERO e conte no próprio material, com calma.",
+  "QUANDO":"Procure o CASO: o que muda quando isso acontece.",
+  "POR QUÊ":"Procure o MOTIVO: por que essa é a saída certa."
+};
+/* a dica do card amarelo passa a vir da CHAVE da pergunta, não do degrau fixo */
+function dicaDaFase(r){
+  const ch=chaveDaTelaSegura(r);
+  if(ch && DICA_POR_CHAVE[ch]) return DICA_POR_CHAVE[ch];
+  const d=DEGRAUS[r&&r.deg]||{};
+  return d.dica||"Leia a pergunta com calma e procure a resposta no material.";
+}
+function dicaDeMetodo(r,q){
+  const ch=chaveDaTelaSegura(r);
+  const linha=(ch&&DICA_POR_CHAVE[ch])?DICA_POR_CHAVE[ch]
+             :"Leia a pergunta, depois procure a resposta no texto e na imagem.";
+  let h='<div class="m7s">🔎 '+linha+'</div>';
+  const temChip=(typeof document!=="undefined") && document.querySelectorAll(".tchip").length>0;
+  if(temChip) h+='<div class="m7s">As palavras grifadas de amarelo abrem o significado. Toque nelas.</div>';
+  else if(((q&&q.glossario)||[]).length) h+='<div class="m7s">O botão 📖 Palavras, no alto da tela, abre o significado de cada termo.</div>';
+  return h;
+}
+
+/* ==================== CLD-200 · A CHAVE DO PROFESSOR (só no HTML de TESTE)
+   O estudante que esquece a senha vê um código de 4 números e é mandado chamar o professor.
+   Só que o professor não tinha como calcular a palavra. Agora tem: no HTML de TESTE, que é
+   o dele, o card abaixo converte o código na palavra. O HTML do estudante não traz isto. */
+function cardChaveProfessor(){
+  if(!MODO_TESTE) return "";
+  return '<div class="m7chave"><div class="t">🗝️ Chave do professor · senha esquecida</div>'+
+    '<div class="l">O estudante que esquecer a senha vê um código de 4 números na tela dele.</div>'+
+    '<div class="l">Digite esse código aqui para saber a palavra que devolve o acesso a ele.</div>'+
+    '<div class="lin"><input id="inChave" inputmode="numeric" maxlength="4" placeholder="0000" '+
+      'oninput="calcularChave()"><span id="outChave" class="out">—</span></div>'+
+    '<div class="l pq">O código muda todo dia e é diferente para cada estudante. '+
+    'A senha apagada não apaga o progresso: ele escolhe uma nova e continua de onde parou.</div>'+
+    '</div>';
+}
+function calcularChave(){
+  const i=document.getElementById("inChave"), o=document.getElementById("outChave");
+  if(!i||!o) return;
+  const v=(i.value||"").replace(/\D/g,"").slice(0,4);
+  i.value=v;
+  o.textContent=(v.length===4)?palavraLiberacao(v):"—";
+}
+
+/* ==================== CLD-202 · "VER TELA N" NO GLOSSÁRIO
+   (Marcos 23/09 19:56: "até pode estar escrito 'não aparece nesta tela' se de fato não
+   aparecer, mas então precisaria ao menos estar 'ver tela xx'")
+   Agora o card lateral diz em qual tela daquele tema a palavra aparece de verdade. */
+function telaDoTermo(qi, termo){
+  const q=BANCO[qi]; if(!q) return 0;
+  const telas=roteiro.filter(function(x){ return x.t==="perg" && x.qi===qi });
+  for(let i=0;i<telas.length;i++){
+    try{ if(termoVisivel(q,telas[i],termo)) return roteiro.indexOf(telas[i])+1 }catch(e){}
+  }
+  return 0;
+}
+function ondeAparece(qi, termo){
+  const n=telaDoTermo(qi,termo);
+  return n? (" · ver tela "+n) : " · só no glossário";
+}
+
 /* ==================== INICIO ==================== */
 montarRoteiro();
 render();
 document.getElementById("rodapever").innerHTML=
   VERSAO+" · "+totalPerguntas+" perguntas · 9º ano · M7<br>"+
-  NO_PROV+" · 23/09/2026";
+  NO_PROV+" · 24/09/2026";
 setInterval(function(){
   const ag=new Date(), hh=ag.getHours(), mm=ag.getMinutes();
   const eh=document.getElementById("stHora");
@@ -9668,7 +10239,7 @@ setInterval(function(){
 if(MODO_TESTE){ window.__auditoria=function(codigo){ return eval(codigo) } }
 ["pedirTelaCheia","voltarTelaCheia","ignorarTelaCheia","abrirLista","pular","escolherTurma",
  "checarAcordo","painel","abrirG","fecharModal","responder","render","avancar","voltarTela",
- "proxFatia","refazerTudo","refazerAula","retomar","comecarDoZero","voltarOnde","abrirRetomada","reiniciarAula","reiniciarTudo","proximaAulaDepois","irAoPlacar","escolherAula","irParaAula","pintarRodape","trocarAba","fecharG","abrirMetodo","abrirGlosCompleto","pintarTrava","zerarLeituras","abrirTrilha","fimTrilha","voltarParte","nomeDigitado","atualizarChamada","escolherGenero","ampliarFig","selecionar","confirmarDuas","tentarDeNovo","reverFase","jogarCoringa","alternarTrilha","refazerTema","escolherPos","abrirRegras","sairJogo","escolherCfg","abrirFim","abrirNivel","porNivel","fecharNivel","abrirBit"].forEach(function(n){
+ "proxFatia","refazerTudo","refazerAula","retomar","comecarDoZero","voltarOnde","abrirRetomada","reiniciarAula","reiniciarTudo","proximaAulaDepois","irAoPlacar","escolherAula","irParaAula","pintarRodape","trocarAba","fecharG","abrirMetodo","abrirGlosCompleto","pintarTrava","zerarLeituras","abrirTrilha","fimTrilha","voltarParte","nomeDigitado","atualizarChamada","escolherGenero","ampliarFig","selecionar","confirmarDuas","tentarDeNovo","reverFase","jogarCoringa","alternarTrilha","refazerTema","escolherPos","abrirRegras","sairJogo","escolherCfg","abrirFim","abrirNivel","porNivel","fecharNivel","abrirBit","abrirCaminho","trocarCaminho","fecharCaminho","abrirGlosQuestao","calcularChave","entrarApoio"].forEach(function(n){
   try{ window[n]=eval(n) }catch(e){}
 });
 })();
